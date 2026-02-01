@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최준영 | 자기소개</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a192f;
+      --light-navy: #112240;
+      --lightest-navy: #233554;
+      --slate: #8892b0;
+      --light-slate: #a8b2d1;
+      --lightest-slate: #ccd6f6;
+      --white: #e6f1ff;
+      --green: #64ffda;
+      --green-tint: rgba(100, 255, 218, 0.1);
+      --font-sans: 'Noto Sans KR', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--navy);
+      color: var(--light-slate);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--green);
+    }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: var(--navy);
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 4px;
+      z-index: 1000;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 20px;
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    /* Layout: sidebar + main */
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Left sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 56px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 32px;
+      z-index: 10;
+    }
+
+    .sidebar::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin-top: auto;
+      background: var(--lightest-navy);
+    }
+
+    .sidebar a {
+      padding: 12px;
+      font-size: 20px;
+      color: var(--light-slate);
+      writing-mode: vertical-rl;
+      letter-spacing: 0.15em;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+
+    .sidebar a:hover {
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .sidebar a + a {
+      margin-top: 8px;
+    }
+
+    .sidebar .nav-dot {
+      width: 1px;
+      padding: 0;
+      writing-mode: unset;
+      letter-spacing: 0;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 120px;
+    }
+
+    .sidebar-nav a {
+      writing-mode: unset;
+      letter-spacing: 0.04em;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 0;
+      position: relative;
+      white-space: nowrap;
+      color: var(--lightest-slate);
+    }
+
+    .sidebar-nav a::after {
+      content: '';
+      position: absolute;
+      left: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 0;
+      background: var(--green);
+      transition: height 0.2s ease;
+    }
+
+    .sidebar-nav a:hover::after,
+    .sidebar-nav a.active::after {
+      height: 14px;
+    }
+
+    .sidebar-nav a:hover {
+      color: var(--green);
+    }
+
+    .sidebar-nav a.active {
+      color: var(--green);
+    }
+
+    /* Right: email link */
+    .email-link {
+      position: fixed;
+      right: 40px;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .email-link a {
+      padding: 12px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      color: var(--light-slate);
+      writing-mode: vertical-rl;
+    }
+
+    .email-link::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin-top: 16px;
+      background: var(--lightest-navy);
+    }
+
+    /* Main content area - 중앙 정렬로 좌우 균형 */
+    .main {
+      margin-left: max(56px, calc(56px + (100vw - 56px - 720px) / 2));
+      padding: 0 80px 120px;
+      max-width: 720px;
+      width: 100%;
+    }
+
+    @media (max-width: 1080px) {
+      .main {
+        padding: 0 60px 80px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .email-link {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 24px 80px;
+        max-width: 100%;
+      }
+    }
+
+    /* Hero / Intro block - like Brittany's top */
+    .hero {
+      padding: 160px 0 120px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero .hi {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+
+    .hero .big-heading {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 600;
+      color: var(--lightest-slate);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      word-break: keep-all;
+    }
+
+    .hero .big-heading .sub {
+      color: var(--light-slate);
+      display: inline;
+      font-size: clamp(28px, 4vw, 56px);
+    }
+
+    .hero .tagline {
+      max-width: 480px;
+      font-size: 18px;
+      color: var(--light-slate);
+      margin-top: 24px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .hero .cta {
+      margin-top: 48px;
+    }
+
+    .hero .cta a {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--green);
+      padding: 16px 28px;
+      border: 1px solid var(--green);
+      border-radius: 4px;
+      display: inline-block;
+      transition: background 0.2s ease;
+    }
+
+    .hero .cta a:hover {
+      background: var(--green-tint);
+    }
+
+    /* Section numbering - Brittany style */
+    section {
+      padding: 0 0 80px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .section-head .number {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .section-head h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--lightest-slate);
+    }
+
+    /* Content blocks */
+    .content-block {
+      margin-bottom: 24px;
+    }
+
+    .content-block p {
+      color: var(--slate);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+
+    .content-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-block a {
+      color: var(--green);
+      position: relative;
+    }
+
+    .content-block a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--green);
+    }
+
+    /* List - job/experience style */
+    .styled-list {
+      list-style: none;
+    }
+
+    .styled-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: var(--slate);
+      font-size: 15px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .styled-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .list-label {
+      color: var(--lightest-slate);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    /* Quote block */
+    .quote-block {
+      border-left: 3px solid var(--green);
+      padding: 16px 0 16px 24px;
+      margin: 32px 0;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--light-slate);
+    }
+
+    /* Timeline / experience rows */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--lightest-navy);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .timeline-item h3 {
+      font-size: 14px;
+      font-family: var(--font-mono);
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .timeline-item .desc {
+      color: var(--slate);
+      font-size: 15px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .timeline-item .desc strong {
+      color: var(--lightest-slate);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--slate);
+    }
+
+    footer a {
+      color: var(--green);
+    }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-link">본문으로 건너뛰기</a>
+
+  <div class="app">
+    <aside class="sidebar">
+      <nav class="sidebar-nav" aria-label="메인 내비게이션">
+        <a href="#intro" class="nav-link">지원동기</a>
+        <a href="#personality" class="nav-link">성격</a>
+        <a href="#philosophy" class="nav-link">생활신조</a>
+        <a href="#experience" class="nav-link">경험</a>
+        <a href="#future" class="nav-link">포부</a>
+      </nav>
+    </aside>
+
+    <main class="main" id="content">
+      <header class="hero">
+        <p class="hi">안녕하세요, 저는</p>
+        <h1 class="big-heading">
+          최준영<span class="sub">입니다.</span>
+        </h1>
+        <p class="tagline">
+          소프트웨어 개발자로서 사용자에게 가치 있는 서비스를 제공하고 싶습니다.
+        </p>
+        <div class="cta">
+          <a href="#intro">더 알아보기</a>
+        </div>
+      </header>
+
+      <section id="intro">
+        <div class="section-head">
+          <span class="number">01.</span>
+          <h2>지원 동기 및 포부</h2>
+        </div>
+        <div class="content-block">
+          <p>대학에서 컴퓨터공학을 전공하며 프로그래밍의 기초를 다졌고, 졸업 후 2년간 스타트업에서 웹 개발 업무를 담당했습니다. 빠르게 변화하는 IT 업계에서 새로운 기술을 학습하고 적용하는 것에 큰 흥미를 느끼며, 특히 사용자 경험을 개선하는 기술적 솔루션을 찾는 것을 좋아합니다.</p>
+          <p>혁신적인 기술력과 우수한 개발 문화로 업계에서 인정받는 환경에서, 저의 기술적 역량을 더욱 발전시키고 의미 있는 프로젝트에 기여하고 싶습니다.</p>
+        </div>
+      </section>
+
+      <section id="personality">
+        <div class="section-head">
+          <span class="number">02.</span>
+          <h2>성격의 장단점</h2>
+        </div>
+        <p class="list-label">장점</p>
+        <ul class="styled-list">
+          <li><strong>꾸준한 학습 의지</strong> — 새로운 기술 트렌드에 관심이 많아 개인 시간을 활용해 온라인 강의를 수강하고 사이드 프로젝트를 진행합니다.</li>
+          <li><strong>협업과 소통</strong> — 팀 프로젝트에서 다른 개발자, 디자이너, 기획자와 원활히 소통하며 공동의 목표를 달성하는 것을 중요하게 생각합니다.</li>
+          <li><strong>문제 해결 지향적</strong> — 복잡한 버그나 기술적 이슈에 직면했을 때 포기하지 않고 다양한 접근 방법을 시도하여 해결책을 찾습니다.</li>
+        </ul>
+        <p class="list-label" style="margin-top: 24px;">단점 &amp; 개선 노력</p>
+        <ul class="styled-list">
+          <li>완벽주의 성향으로 때로는 코드의 완성도에 지나치게 집착하여 일정에 영향을 줄 수 있습니다. 우선순위를 명확히 하고 적정 수준의 완성도를 목표로 하는 연습을 하고 있습니다.</li>
+        </ul>
+      </section>
+
+      <section id="philosophy">
+        <div class="section-head">
+          <span class="number">03.</span>
+          <h2>생활신조</h2>
+        </div>
+        <div class="quote-block">
+          "기술은 사람을 위해 존재한다"
+        </div>
+        <div class="content-block">
+          <p>개발자로서 항상 사용자의 관점에서 생각하려 노력합니다. 아무리 기술적으로 뛰어난 코드라도 실제 사용자에게 도움이 되지 않는다면 의미가 없다고 생각합니다. 사용자가 더 편리하고 효율적으로 업무를 처리할 수 있도록 돕는 것이 개발자의 사명이라고 믿습니다.</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head">
+          <span class="number">04.</span>
+          <h2>학창시절 경험 및 특이사항</h2>
+        </div>
+        <div class="content-block">
+          <p><strong>해커톤 우수상</strong> — 대학교 3학년 때 교내 해커톤에서 "지역 상권 활성화 앱"을 개발하여 우수상을 수상했습니다. 팀장으로서 5명의 팀원과 함께 48시간 동안 React Native로 모바일 앱을 완성했습니다.</p>
+          <p>백엔드 API 설계부터 프론트엔드 구현까지 전 과정에 참여하면서 풀스택 개발 경험을 쌓았고, 짧은 시간 내에 팀원들의 역량을 파악하고 업무를 효율적으로 분배하는 리더십을 발휘했습니다.</p>
+          <p><strong>학회 멘토링</strong> — 대학교 4년간 컴퓨터공학과 학회에서 활동하며 후배들에게 프로그래밍을 가르치는 멘토링을 진행했습니다. 복잡한 개념을 쉽게 설명하는 능력을 기를 수 있었고, 이는 현재 팀 내에서 코드 리뷰와 기술 공유를 할 때 큰 도움이 되고 있습니다.</p>
+        </div>
+      </section>
+
+      <section id="future">
+        <div class="section-head">
+          <span class="number">05.</span>
+          <h2>입사 후 포부</h2>
+        </div>
+        <div class="content-block">
+          <p>입사 후에는 먼저 개발 문화와 코딩 컨벤션에 빠르게 적응하여 팀의 일원으로서 역할을 다하겠습니다.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>단기</h3>
+            <div class="desc">맡은 업무를 성실히 수행하면서 비즈니스 도메인에 대한 이해도를 높이고, 기존 팀원들과의 협업을 통해 개발 실력을 향상시키겠습니다.</div>
+          </div>
+          <div class="timeline-item">
+            <h3>중장기</h3>
+            <div class="desc">기술 리더로 성장하여 주니어 개발자들을 멘토링하고, 새로운 기술 도입과 개발 프로세스 개선에 기여하고 싶습니다. 클라우드 기술과 마이크로서비스 아키텍처에 대한 전문성을 쌓아 서비스의 확장성과 안정성 향상에 기여하겠습니다.</div>
+          </div>
+          <div class="timeline-item">
+            <h3>궁극적 목표</h3>
+            <div class="desc">함께 성장하여 IT 업계에서 인정받는 개발자가 되고, 사용자에게 진정한 가치를 제공하는 혁신적인 서비스 개발에 핵심적인 역할을 담당하고 싶습니다.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>감사합니다. <a href="mailto:hello@example.com">최준영</a> 드림</p>
+      </footer>
+    </main>
+
+    <div class="email-link">
+      <a href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // 스크롤 시 섹션 페이드인
+      var sections = document.querySelectorAll('section');
+      var observerOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, observerOptions);
+      sections.forEach(function(s) { observer.observe(s); });
+
+      // 사이드바 네비 활성화 (현재 보이는 섹션)
+      var navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+      var sectionIds = ['intro', 'personality', 'philosophy', 'experience', 'future'];
+
+      function updateActiveNav() {
+        var scrollY = window.scrollY;
+        var innerHeight = window.innerHeight;
+        var mid = scrollY + innerHeight * 0.4;
+
+        sectionIds.forEach(function(id, i) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          var top = el.offsetTop;
+          var bottom = top + el.offsetHeight;
+          navLinks[i].classList.toggle('active', mid >= top && mid < bottom);
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNav);
+      window.addEventListener('load', updateActiveNav);
+
+      // 스무스 스크롤
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        var href = anchor.getAttribute('href');
+        if (href === '#') return;
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
