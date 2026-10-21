@@ -1,0 +1,58 @@
+# Collects DexScreener snapshots with the scout bot, runs the signal bot over
+# them, and commits both to the `scout-data` branch (Pages builds from main,
+# so the data never touches the site).
+name: scout
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [claude/worldmonitor-install-validate-tbers1]
+    paths: ['.github/workflows/scout.yml', 'paper-trading/**']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scout
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check out data branch
+        run: |
+          if git ls-remote --exit-code --heads origin scout-data; then
+            git fetch --depth 1 origin scout-data
+            git worktree add -B scout-data store origin/scout-data
+          else
+            git worktree add --orphan -b scout-data store
+          fi
+
+      - name: Collect snapshots
+        # Scheduled runs cover most of the 15-minute gap; manual and push runs are quick checks.
+        run: node paper-trading/scout/scout.mjs --interval 60 --ticks ${{ github.event_name == 'schedule' && 14 || 3 }} --out store/data
+
+      - name: Check entry signals
+        run: node paper-trading/signal/signal.mjs --data store/data --out store/signals
+
+      - name: Commit data
+        working-directory: store
+        run: |
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "scout data $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          for i in 1 2 3; do
+            git push origin scout-data && exit 0
+            git pull --rebase origin scout-data
+          done
+          exit 1
