@@ -1,0 +1,10 @@
+{
+  "lookbackTicks": 10,
+  "minLiquidityUsd": 100000,
+  "minTxnsM5": 5,
+  "minBuyRatioM5": 0.6,
+  "minChgM5": 0,
+  "minChgH1": 0,
+  "maxAboveMeanPct": 5,
+  "cooldownMin": 30
+}
