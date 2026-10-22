@@ -17,6 +17,7 @@ node --test signal.test.mjs     # 규칙 테스트
 | 체크 | 기본값 | 뜻 |
 |---|---|---|
 | (워밍업) | `lookbackTicks` 10 | 직전 기록이 10틱 이상 쌓이기 전에는 판단하지 않아 |
+| (연속성) | `maxGapSec` 180 | 최근 10틱 사이에 3분 넘게 빈 구간이 있으면 판단하지 않아. 몇 시간 전 가격이 평균에 섞이는 걸 막는 장치야 |
 | `liquidity` | `minLiquidityUsd` 100,000 | 유동성 $10만 이상 |
 | `activity` | `minTxnsM5` 5 | 최근 5분 거래가 5건 이상 |
 | `buyPressure` | `minBuyRatioM5` 0.6 | 최근 5분 거래 중 매수 비율이 60% 이상 |

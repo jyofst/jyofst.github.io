@@ -43,10 +43,13 @@ export function loadSnapshots(dataDir) {
 }
 
 // Checks one snapshot against the rules, given the snapshots before it for
-// the same symbol. Returns null while there is not enough history yet.
+// the same symbol. Returns null until there are lookbackTicks unbroken
+// snapshots, so a collection gap never mixes hours-old prices into the mean.
 export function evaluate(row, history, rules) {
   if (history.length < rules.lookbackTicks) return null;
   const window = history.slice(-rules.lookbackTicks);
+  const times = [...window, row].map((r) => Date.parse(r.ts));
+  if (times.some((t, i) => i > 0 && t - times[i - 1] > rules.maxGapSec * 1000)) return null;
   const price = num(row.priceUsd);
   const mean = window.reduce((s, r) => s + num(r.priceUsd), 0) / window.length;
   const buys = num(row.buys_m5) ?? 0;

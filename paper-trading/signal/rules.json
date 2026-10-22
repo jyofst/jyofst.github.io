@@ -1,5 +1,6 @@
 {
   "lookbackTicks": 10,
+  "maxGapSec": 180,
   "minLiquidityUsd": 100000,
   "minTxnsM5": 5,
   "minBuyRatioM5": 0.6,
