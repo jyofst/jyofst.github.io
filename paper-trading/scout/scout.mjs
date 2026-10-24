@@ -49,19 +49,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Pick the pair by contract address, not by symbol: symbol search returns
 // look-alike tokens whose "liquidity" is large but whose volume is near zero.
+// Among real pairs, prefer the busiest one: the signal bot's activity and
+// buy-pressure checks read this pair's trade counts.
+const txns24 = (p) => (p.txns?.h24?.buys ?? 0) + (p.txns?.h24?.sells ?? 0);
+
 async function resolvePairs(cfg) {
   const resolved = [];
   for (const t of cfg.tokens) {
     const pairs = await getJson(`${API}/token-pairs/v1/${cfg.chain}/${t.address}`);
     const best = pairs
       .filter((p) => p.baseToken?.address === t.address && (p.liquidity?.usd ?? 0) >= cfg.minLiquidityUsd)
-      .sort((a, b) => (b.volume?.h24 ?? 0) - (a.volume?.h24 ?? 0))[0];
+      .sort((a, b) => txns24(b) - txns24(a))[0];
     if (!best) {
       console.warn(`[resolve] ${t.symbol}: no pair with liquidity >= $${cfg.minLiquidityUsd}`);
       continue;
     }
     resolved.push({ symbol: t.symbol, pair: best.pairAddress });
-    console.log(`[resolve] ${t.symbol} -> ${best.dexId} ${best.pairAddress} (vol24 $${Math.round(best.volume?.h24 ?? 0)})`);
+    console.log(`[resolve] ${t.symbol} -> ${best.dexId} ${best.pairAddress} (${txns24(best)} txns/24h)`);
   }
   return resolved;
 }
@@ -118,8 +122,8 @@ async function main() {
           console.warn(`[tick ${tick}] ${symbol}: pair missing from response`);
           continue;
         }
-        const row = toRow(symbol, p, last.get(symbol), ts);
-        last.set(symbol, { price: Number(p.priceUsd), liq: p.liquidity?.usd ?? 0 });
+        const row = toRow(symbol, p, last.get(pair), ts);
+        last.set(pair, { price: Number(p.priceUsd), liq: p.liquidity?.usd ?? 0 });
         appendCsv(args.out, row);
         console.log(`[tick ${tick}] ${symbol} $${row.priceUsd} liq $${Math.round(row.liquidityUsd)} m5 ${row.chg_m5}% ${row.flags}`);
       }
