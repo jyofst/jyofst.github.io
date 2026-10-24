@@ -20,6 +20,20 @@ DexScreener ─▶ ① 스카우트 ─▶ CSV ─▶ ② 신호 ─▶ ③ 리�
 
 봇끼리는 파일로만 주고받아(CSV, JSONL). 그래서 하나씩 따로 돌리고 따로 고칠 수 있어.
 
+## 데이터 수집 방식
+
+| 방식 | 어떻게 | 실제 커버리지 |
+|---|---|---|
+| GitHub Actions (기본) | `.github/workflows/scout.yml`이 예약 실행될 때마다 30분씩 수집해서 `scout-data` 브랜치에 커밋해 | 일정은 15분마다로 걸어 뒀지만, 실제로는 3~5시간에 한 번꼴로 실행돼. 그래서 하루 몇 시간 정도만 모여 |
+| 상시 수집 (선택) | 항상 켜 둔 PC나 VM에서 아래 두 명령을 띄워 둬 | 24시간 |
+
+```bash
+node paper-trading/scout/scout.mjs                 # 60초 간격으로 계속 수집
+node paper-trading/signal/signal.mjs --watch 60    # 60초마다 신호 체크
+```
+
+Actions 작업을 몇 시간씩 계속 이어 붙여서 상시 서버처럼 쓰는 방식은 일부러 쓰지 않았어. GitHub 이용약관상 애매한 영역이라서야.
+
 ## 참고: 월드모니터
 
 [koala73/worldmonitor](https://github.com/koala73/worldmonitor)는 세계 뉴스, 지정학, 시장 데이터를 한 화면에 모아 보는 오픈소스 대시보드야. 이 저장소에 포함돼 있지 않고, 필요할 때 따로 설치해서 써. 공포탐욕지수나 예측시장 같은 시장 분위기 데이터를 나중에 신호 봇의 보조 필터로 붙일 수 있어.
