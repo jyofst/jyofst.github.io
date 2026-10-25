@@ -21,7 +21,7 @@ concurrency:
 jobs:
   scout:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -40,12 +40,15 @@ jobs:
 
       - name: Collect snapshots
         # GitHub starts scheduled runs hours apart in practice, so each one collects
-        # 30 minutes: enough unbroken ticks for ~20 signal checks after warm-up.
-        # Manual and push runs are quick checks.
-        run: node paper-trading/scout/scout.mjs --interval 60 --ticks ${{ github.event_name == 'schedule' && 30 || 3 }} --out store/data
+        # 50 minutes: 10 ticks of warm-up, then room for a signal to be followed
+        # through the simulator's 20-minute max hold. Manual and push runs are quick checks.
+        run: node paper-trading/scout/scout.mjs --interval 60 --ticks ${{ github.event_name == 'schedule' && 50 || 3 }} --out store/data
 
       - name: Check entry signals
         run: node paper-trading/signal/signal.mjs --data store/data --out store/signals
+
+      - name: Replay paper trades
+        run: node paper-trading/sim/sim.mjs --data store/data --out store/sim
 
       - name: Commit data
         working-directory: store
