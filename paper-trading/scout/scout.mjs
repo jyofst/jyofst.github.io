@@ -56,12 +56,15 @@ const txns24 = (p) => (p.txns?.h24?.buys ?? 0) + (p.txns?.h24?.sells ?? 0);
 async function resolvePairs(cfg) {
   const resolved = [];
   for (const t of cfg.tokens) {
+    // A token can raise the floor to skip thin pools whose price a single
+    // trade can knock far off the market.
+    const minLiq = t.minLiquidityUsd ?? cfg.minLiquidityUsd;
     const pairs = await getJson(`${API}/token-pairs/v1/${cfg.chain}/${t.address}`);
     const best = pairs
-      .filter((p) => p.baseToken?.address === t.address && (p.liquidity?.usd ?? 0) >= cfg.minLiquidityUsd)
+      .filter((p) => p.baseToken?.address === t.address && (p.liquidity?.usd ?? 0) >= minLiq)
       .sort((a, b) => txns24(b) - txns24(a))[0];
     if (!best) {
-      console.warn(`[resolve] ${t.symbol}: no pair with liquidity >= $${cfg.minLiquidityUsd}`);
+      console.warn(`[resolve] ${t.symbol}: no pair with liquidity >= $${minLiq}`);
       continue;
     }
     resolved.push({ symbol: t.symbol, pair: best.pairAddress });
