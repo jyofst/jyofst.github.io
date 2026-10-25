@@ -1,0 +1,11 @@
+{
+  "startingCashUsd": 10000,
+  "positionPct": 10,
+  "maxOpenPositions": 2,
+  "feePct": 0.3,
+  "slippagePct": 0.2,
+  "stopLossPct": 3,
+  "stopConfirmTicks": 2,
+  "takeProfitPct": 5,
+  "maxHoldMin": 20
+}
