@@ -32,7 +32,9 @@ async function getJson(url) {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      // data.go.kr explains rejections (unapproved key, wrong key type) in the
+      // body; keep it so the Actions log shows why.
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).replace(/\s+/g, ' ').slice(0, 300)}`);
       return await res.json();
     } catch (err) {
       if (attempt === 3) throw err;
