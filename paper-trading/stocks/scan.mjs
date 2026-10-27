@@ -86,7 +86,9 @@ export function renderReport({ asOf, universe, results, backtest }) {
     '',
     universe.scope === 'market'
       ? `범위: ${universe.symbols.length}종목 (코스피 시총 상위 200 + 코스닥 상위 150 + 보유종목). 데이터 실패 ${universe.failed.length}종목.`
-      : `범위: 보유종목 ${universe.symbols.length}개만 봤어. 공공데이터포털 키(DATA_GO_KR_KEY)가 아직 없어서 시장 전체를 못 받았어. 데이터 실패 ${universe.failed.length}종목.`,
+      : universe.keyError
+        ? `범위: 보유종목 ${universe.symbols.length}개만 봤어. 공공데이터포털이 요청을 거부해서 시장 전체를 못 받았어 (\`${universe.keyError.slice(0, 200)}\`). 데이터 실패 ${universe.failed.length}종목.`
+        : `범위: 보유종목 ${universe.symbols.length}개만 봤어. 공공데이터포털 키(DATA_GO_KR_KEY)가 아직 없어서 시장 전체를 못 받았어. 데이터 실패 ${universe.failed.length}종목.`,
     '',
     '조건: 20일선이 60일선 위에 있고 60일선이 오르는 중이야. 그 상태에서 종가가 20일선 97~103% 안에 있고, 20일 고점보다 5% 이상 빠져 있고, 최근 5일 거래량이 20일 평균 이하일 때 걸려. **관찰 기록이고 매수 추천이 아니야.**',
     '',

@@ -105,13 +105,22 @@ async function main() {
   // Accept either key data.go.kr shows: the Encoding one would otherwise be
   // percent-encoded a second time and rejected as unregistered.
   const rawKey = process.env.DATA_GO_KR_KEY?.trim();
-  const key = rawKey?.includes('%') ? decodeURIComponent(rawKey) : rawKey;
+  let key = rawKey?.includes('%') ? decodeURIComponent(rawKey) : rawKey;
+  let keyError = null;
   const { holdings } = JSON.parse(readFileSync(args.holdings, 'utf8'));
   let universe = holdings.map((h) => ({ ...h, currency: h.symbol.endsWith('.KS') || h.symbol.endsWith('.KQ') ? 'KRW' : 'USD', holding: true }));
   if (key) {
-    const latest = await latestKrxDay(key);
-    universe = [...universe, ...topByMarketCap(latest, 'KOSPI', args.kospi), ...topByMarketCap(latest, 'KOSDAQ', args.kosdaq)]
-      .filter((s, i, all) => all.findIndex((x) => x.symbol === s.symbol) === i);
+    try {
+      const latest = await latestKrxDay(key);
+      universe = [...universe, ...topByMarketCap(latest, 'KOSPI', args.kospi), ...topByMarketCap(latest, 'KOSDAQ', args.kosdaq)]
+        .filter((s, i, all) => all.findIndex((x) => x.symbol === s.symbol) === i);
+    } catch (err) {
+      // A rejected key (e.g. not yet active after approval) should still leave
+      // the holdings report running; the report shows why the market is missing.
+      keyError = err.message;
+      key = undefined;
+      console.warn(`[collect] data.go.kr unavailable, collecting holdings only: ${keyError}`);
+    }
   } else {
     console.warn('[collect] DATA_GO_KR_KEY not set: collecting holdings only');
   }
@@ -131,7 +140,7 @@ async function main() {
     }
     await sleep(150);
   }
-  writeFileSync(join(args.out, 'universe.json'), JSON.stringify({ updatedAt: new Date().toISOString(), scope: key ? 'market' : 'holdings', failed, symbols: universe }, null, 2) + '\n');
+  writeFileSync(join(args.out, 'universe.json'), JSON.stringify({ updatedAt: new Date().toISOString(), scope: key ? 'market' : 'holdings', keyError, failed, symbols: universe }, null, 2) + '\n');
   console.log(`[collect] ${universe.length - failed.length}/${universe.length} symbols saved`);
 }
 
