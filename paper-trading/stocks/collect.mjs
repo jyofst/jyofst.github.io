@@ -102,7 +102,10 @@ async function fetchBars(s, key) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  const key = process.env.DATA_GO_KR_KEY;
+  // Accept either key data.go.kr shows: the Encoding one would otherwise be
+  // percent-encoded a second time and rejected as unregistered.
+  const rawKey = process.env.DATA_GO_KR_KEY?.trim();
+  const key = rawKey?.includes('%') ? decodeURIComponent(rawKey) : rawKey;
   const { holdings } = JSON.parse(readFileSync(args.holdings, 'utf8'));
   let universe = holdings.map((h) => ({ ...h, currency: h.symbol.endsWith('.KS') || h.symbol.endsWith('.KQ') ? 'KRW' : 'USD', holding: true }));
   if (key) {
