@@ -1,0 +1,7 @@
+{
+  "buyCostPct": 0.1,
+  "sellCostPct": 0.35,
+  "stopLossPct": 5,
+  "takeProfitPct": 10,
+  "maxHoldDays": 10
+}
