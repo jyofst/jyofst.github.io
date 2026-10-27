@@ -1,0 +1,10 @@
+{
+  "minBars": 80,
+  "minAvgTradingValue": { "KRW": 1000000000, "USD": 10000000 },
+  "ma60SlopeDays": 10,
+  "nearMa20Low": 97,
+  "nearMa20High": 103,
+  "highLookbackDays": 20,
+  "pullbackFromHighPct": 5,
+  "volumeDryUpRatio": 1.0
+}

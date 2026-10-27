@@ -1,0 +1,62 @@
+# After the Korean close on weekdays: collect daily bars, backtest the pullback
+# rule, scan for today's candidates, and commit the report to the stocks-data
+# branch (Pages builds from main, so it never touches the site).
+name: stocks
+
+on:
+  schedule:
+    - cron: '7 7 * * 1-5'   # 16:07 KST
+  workflow_dispatch:
+  push:
+    branches: [claude/worldmonitor-install-validate-tbers1]
+    paths: ['.github/workflows/stocks.yml', 'paper-trading/stocks/**']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stocks
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check out data branch
+        run: |
+          if git ls-remote --exit-code --heads origin stocks-data; then
+            git fetch --depth 1 origin stocks-data
+            git worktree add -B stocks-data store origin/stocks-data
+          else
+            git worktree add --orphan -b stocks-data store
+          fi
+
+      - name: Collect daily bars
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node paper-trading/stocks/collect.mjs --out data
+
+      - name: Backtest and scan
+        run: |
+          node paper-trading/stocks/backtest.mjs --data data --out store
+          node paper-trading/stocks/scan.mjs --data data --out store
+          cp data/universe.json store/
+
+      - name: Commit report
+        working-directory: store
+        run: |
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "stocks scan $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          for i in 1 2 3; do
+            git push origin stocks-data && exit 0
+            git pull --rebase origin stocks-data
+          done
+          exit 1
