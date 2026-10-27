@@ -13,9 +13,9 @@
     "medianNetPct": -5.88
   },
   "baseline": {
-    "trades": 814,
-    "winRatePct": 40.17,
-    "avgNetPct": -0.04,
+    "trades": 815,
+    "winRatePct": 40.25,
+    "avgNetPct": -0.03,
     "medianNetPct": -5.95
   }
 }
