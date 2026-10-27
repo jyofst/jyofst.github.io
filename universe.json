@@ -1,0 +1,42 @@
+{
+  "updatedAt": "2026-10-27T07:39:40.123Z",
+  "scope": "holdings",
+  "failed": [],
+  "symbols": [
+    {
+      "symbol": "005930.KS",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "currency": "KRW",
+      "holding": true
+    },
+    {
+      "symbol": "000660.KS",
+      "name": "SK하이닉스",
+      "market": "KOSPI",
+      "currency": "KRW",
+      "holding": true
+    },
+    {
+      "symbol": "012330.KS",
+      "name": "현대모비스",
+      "market": "KOSPI",
+      "currency": "KRW",
+      "holding": true
+    },
+    {
+      "symbol": "SNDK",
+      "name": "샌디스크",
+      "market": "NASDAQ",
+      "currency": "USD",
+      "holding": true
+    },
+    {
+      "symbol": "BE",
+      "name": "블룸에너지",
+      "market": "NYSE",
+      "currency": "USD",
+      "holding": true
+    }
+  ]
+}
