@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-28T08:13:59.071Z",
+  "updatedAt": "2026-10-28T13:58:25.292Z",
   "scope": "holdings",
-  "keyError": "HTTP 403: { \"OpenAPI_ServiceResponse\": { \"cmmMsgHeader\": { \"errMsg\": \"SERVICE_KEY_IS_NOT_REGISTERED_ERROR\", \"returnAuthMsg\": \"등록되지 않은 서비스키\", \"returnReasonCode\": \"30\" } } } ",
+  "keyError": "fetch failed",
   "failed": [],
   "symbols": [
     {
