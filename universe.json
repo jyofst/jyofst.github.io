@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T06:43:28.721Z",
+  "updatedAt": "2026-10-28T06:44:41.241Z",
   "scope": "holdings",
   "keyError": "HTTP 403: { \"OpenAPI_ServiceResponse\": { \"cmmMsgHeader\": { \"errMsg\": \"SERVICE_KEY_IS_NOT_REGISTERED_ERROR\", \"returnAuthMsg\": \"등록되지 않은 서비스키\", \"returnReasonCode\": \"30\" } } } ",
   "failed": [],
