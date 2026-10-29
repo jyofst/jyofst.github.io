@@ -1,0 +1,9 @@
+{
+  "variants": [
+    { "name": "기본 규칙", "overrides": {} },
+    { "name": "정배열 종목만", "overrides": { "requireAligned": true } },
+    { "name": "반등 양봉 확인 후", "overrides": { "requireBounce": true } },
+    { "name": "정배열 + 반등 양봉", "overrides": { "requireAligned": true, "requireBounce": true } },
+    { "name": "거래량 감소 조건 제외", "overrides": { "volumeDryUpRatio": 99 } }
+  ]
+}

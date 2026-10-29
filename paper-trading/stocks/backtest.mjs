@@ -9,7 +9,7 @@
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadBars, evaluate } from './scan.mjs';
+import { loadBars, evaluate, segments } from './scan.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -17,6 +17,7 @@ function parseArgs(argv) {
   const args = {
     data: join(HERE, 'data'), out: join(HERE, 'results'),
     rules: join(HERE, 'rules.json'), config: join(HERE, 'backtest.json'),
+    experiments: join(HERE, 'experiments.json'),
   };
   for (let i = 0; i < argv.length; i += 2) {
     const key = argv[i].replace(/^--/, '');
@@ -77,16 +78,31 @@ function main() {
   const args = parseArgs(process.argv.slice(2));
   const rules = JSON.parse(readFileSync(args.rules, 'utf8'));
   const cfg = JSON.parse(readFileSync(args.config, 'utf8'));
+  const { variants: experiments = [] } = JSON.parse(readFileSync(args.experiments, 'utf8'));
   const { symbols } = JSON.parse(readFileSync(join(args.data, 'universe.json'), 'utf8'));
   const signal = [];
   const baseline = [];
+  const variantTrades = experiments.map(() => []);
+  let priceBreaks = 0;
   for (const s of symbols) {
-    const bars = loadBars(join(args.data, 'bars', `${s.symbol}.csv`));
-    const res = backtestSymbol(bars, rules, cfg, s.currency);
-    signal.push(...res.signal.map((t) => ({ symbol: s.symbol, name: s.name, ...t })));
-    baseline.push(...res.baseline);
+    const segs = segments(loadBars(join(args.data, 'bars', `${s.symbol}.csv`)), s.currency);
+    priceBreaks += segs.length - 1;
+    for (const bars of segs) {
+      const res = backtestSymbol(bars, rules, cfg, s.currency);
+      signal.push(...res.signal.map((t) => ({ symbol: s.symbol, name: s.name, ...t })));
+      baseline.push(...res.baseline);
+      experiments.forEach((v, k) => {
+        variantTrades[k].push(...backtestSymbol(bars, { ...rules, ...v.overrides }, cfg, s.currency).signal);
+      });
+    }
   }
-  const summary = { cfg, signal: stats(signal), baseline: stats(baseline) };
+  const summary = {
+    cfg,
+    priceBreaks,
+    signal: stats(signal),
+    baseline: stats(baseline),
+    variants: experiments.map((v, k) => ({ name: v.name, stats: stats(variantTrades[k]) })),
+  };
   mkdirSync(args.out, { recursive: true });
   writeFileSync(join(args.out, 'backtest.json'), JSON.stringify(summary, null, 2) + '\n');
   const cols = ['symbol', 'name', 'signalDate', 'entryDate', 'exitDate', 'reason', 'heldDays', 'grossPct', 'netPct'];
