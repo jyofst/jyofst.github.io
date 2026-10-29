@@ -124,3 +124,31 @@ test('portfolio: caps open positions, buys the most liquid signal, closes on a p
   const bm = benchmark([{ symbol: 'S', segs: [split.slice(-3), after] }], split.at(-3).date);
   assert.ok(bm.returnPct > -10, 'a 5:1 split is not counted as an 80% loss');
 });
+
+test('indicators: sanity on simple series', async () => {
+  const ind = await import('./indicators.mjs');
+  const flat = Array.from({ length: 40 }, (_, i) => bar(i, 100));
+  assert.equal(ind.ema(flat.map((b) => b.close), 10).at(-1), 100);
+  const rising = Array.from({ length: 40 }, (_, i) => bar(i, 100 + i));
+  assert.equal(ind.rsi(rising, 14).at(-1), 100);
+  const bb = ind.bollinger(flat, 20, 2);
+  assert.equal(bb.upper.at(-1), 100);
+  // Supertrend flips down after a sharp fall from an uptrend.
+  const vshape = [...rising, ...Array.from({ length: 10 }, (_, i) => bar(40 + i, 139 - 8 * (i + 1)))];
+  const st = ind.supertrend(vshape, 10, 3);
+  assert.equal(st.up[38], true);
+  assert.equal(st.up.at(-1), false);
+  const { plusDi, minusDi, adx } = ind.dmi(rising, 14);
+  assert.ok(plusDi.at(-1) > minusDi.at(-1));
+  assert.ok(adx.at(-1) > 25);
+});
+
+test('indicator strategies: entry next open, exit on the sell rule', async () => {
+  const { runStrategy, WARMUP } = await import('./indicator-test.mjs');
+  const bars = Array.from({ length: WARMUP + 10 }, (_, i) => bar(i, 100 + i));
+  const strat = { buy: (x, i) => i === WARMUP, sell: (x, i) => i === WARMUP + 4 };
+  const [t] = runStrategy(bars, {}, strat);
+  assert.equal(t.entryIdx, WARMUP + 1);
+  assert.equal(t.exitIdx, WARMUP + 4);
+  assert.equal(t.heldDays, 4);
+});

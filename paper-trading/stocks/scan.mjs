@@ -99,7 +99,7 @@ function fmtPrice(x, currency) {
   return currency === 'USD' ? `$${x.toFixed(2)}` : `${Math.round(x).toLocaleString('en-US')}원`;
 }
 
-export function renderReport({ asOf, universe, results, backtest, portfolio }) {
+export function renderReport({ asOf, universe, results, backtest, portfolio, indicators }) {
   const name = (s) => `${s.name} (${s.symbol.replace(/\.(KS|KQ)$/, '')})`;
   const candidates = results.filter((x) => x.res?.pass && !x.s.holding).sort((a, b) => a.res.disparity20 - b.res.disparity20);
   const lines = [
@@ -180,6 +180,24 @@ export function renderReport({ asOf, universe, results, backtest, portfolio }) {
       `| 첫날 사서 보유 (비교 기준) | - | ${portfolio.benchmark.returnPct}% | ${portfolio.benchmark.maxDrawdownPct}% | - | - | 100% | - |`,
     );
   }
+  if (indicators) {
+    const pct = (v) => (v == null ? '-' : `${v > 0 ? '+' : ''}${v}%`);
+    lines.push(
+      '',
+      '## 스윙 지표 신호 검증',
+      '',
+      `지표별 매수 신호 다음 날 시가에 사고, 그 지표의 매도·손절 신호가 나온 날 종가에 팔았어(최대 ${indicators.maxHoldDays}거래일). 국내 ${indicators.symbols}종목, ${indicators.testStart} ~ ${indicators.testEnd}. '시장 대비'는 같은 기간 전체 종목 평균 수익률을 뺀 값이야. 거래 비용(약 0.45%)은 지표 쪽에만 들어가 있어. 앞/뒤는 ${indicators.midDate} 기준으로 기간을 반으로 나눈 결과야. 둘 다 플러스여야 우연이 아닐 가능성이 커.`,
+      '',
+      '| 지표 | 거래 | 승률 | 평균 순수익 | 평균 보유일 | 시장 대비 | 시장 대비 (앞/뒤) |',
+      '|---|---|---|---|---|---|---|',
+      ...indicators.results.map(({ name, all: a, firstHalf: f, secondHalf: s }) =>
+        `| ${name} | ${a.trades} | ${a.winRatePct == null ? '-' : `${a.winRatePct}%`} | ${pct(a.avgNetPct)} | ${a.avgHeldDays ?? '-'} | **${pct(a.avgExcessPct)}** | ${pct(f.avgExcessPct)} / ${pct(s.avgExcessPct)} |`),
+      '',
+      '코드로 옮긴 규칙:',
+      '',
+      ...indicators.results.map(({ name, rule }) => `- **${name}**: ${rule}`),
+    );
+  }
   return lines.join('\n') + '\n';
 }
 
@@ -197,11 +215,13 @@ async function main() {
   if (existsSync(btFile)) backtest = JSON.parse(readFileSync(btFile, 'utf8'));
   const pfFile = join(args.out, 'portfolio-result.json');
   const portfolio = existsSync(pfFile) ? JSON.parse(readFileSync(pfFile, 'utf8')) : null;
+  const indFile = join(args.out, 'indicator-test.json');
+  const indicators = existsSync(indFile) ? JSON.parse(readFileSync(indFile, 'utf8')) : null;
 
   mkdirSync(args.out, { recursive: true });
   const candidates = results.filter((x) => x.res?.pass).map(({ s, res }) => ({ ...s, ...res }));
   writeFileSync(join(args.out, `signals-${asOf}.json`), JSON.stringify(candidates, null, 2) + '\n');
-  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest, portfolio }));
+  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest, portfolio, indicators }));
   console.log(`[scan] ${asOf}: ${candidates.length} candidate(s)`);
 }
 
