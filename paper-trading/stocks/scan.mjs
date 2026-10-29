@@ -99,7 +99,7 @@ function fmtPrice(x, currency) {
   return currency === 'USD' ? `$${x.toFixed(2)}` : `${Math.round(x).toLocaleString('en-US')}원`;
 }
 
-export function renderReport({ asOf, universe, results, backtest, portfolio }) {
+export function renderReport({ asOf, universe, results, backtest, portfolio, indicators }) {
   const name = (s) => `${s.name} (${s.symbol.replace(/\.(KS|KQ)$/, '')})`;
   const candidates = results.filter((x) => x.res?.pass && !x.s.holding).sort((a, b) => a.res.disparity20 - b.res.disparity20);
   const lines = [
@@ -137,7 +137,7 @@ export function renderReport({ asOf, universe, results, backtest, portfolio }) {
     const { signal: sg, baseline: bl, cfg } = backtest;
     lines.push(
       '',
-      '## 지난 1년 백테스트',
+      '## 백테스트 (수집한 전체 기간)',
       '',
       `신호 다음 날 시가에 사고, 손절 -${cfg.stopLossPct}% · 익절 +${cfg.takeProfitPct}% · 최대 ${cfg.maxHoldDays}거래일 보유로 종가 기준 청산한 결과야. 비용은 매수 ${cfg.buyCostPct}%, 매도 ${cfg.sellCostPct}%로 잡았어. 비교 기준은 같은 종목에서 아무 날이나 똑같이 샀을 때의 평균이야.`,
       '',
@@ -146,7 +146,7 @@ export function renderReport({ asOf, universe, results, backtest, portfolio }) {
       `| 눌림목 신호 | ${sg.trades} | ${sg.winRatePct}% | ${sg.avgNetPct}% | ${sg.medianNetPct}% |`,
       `| 아무 날이나 (비교 기준) | ${bl.trades} | ${bl.winRatePct}% | ${bl.avgNetPct}% | ${bl.medianNetPct}% |`,
       '',
-      '범위를 오늘 시가총액 순위로 골랐기 때문에, 1년 사이 크게 오른 종목이 더 많이 들어가 있어(생존 편향). 그래서 두 줄 모두 실제보다 좋게 나올 수 있어. 의미 있게 볼 건 두 줄의 차이야.',
+      '범위를 오늘 시가총액 순위로 골랐기 때문에, 수집 기간 동안 크게 오른 종목이 더 많이 들어가 있어(생존 편향). 그래서 두 줄 모두 실제보다 좋게 나올 수 있어. 의미 있게 볼 건 두 줄의 차이야.',
       '',
       `종가가 하루에 30% 넘게 변한 날(분할·합병 등으로 가격이 보정되지 않은 날 ${backtest.priceBreaks ?? 0}건)은 그 앞뒤를 이어서 계산하지 않았어.`,
     );
@@ -180,6 +180,26 @@ export function renderReport({ asOf, universe, results, backtest, portfolio }) {
       `| 첫날 사서 보유 (비교 기준) | - | ${portfolio.benchmark.returnPct}% | ${portfolio.benchmark.maxDrawdownPct}% | - | - | 100% | - |`,
     );
   }
+  if (indicators) {
+    const pct = (v) => (v == null ? '-' : `${v > 0 ? '+' : ''}${v}%`);
+    lines.push(
+      '',
+      '## 스윙 지표 신호 검증',
+      '',
+      `지표별 매수 신호 다음 날 시가에 사고, 그 지표의 매도·손절 신호가 나온 날 종가에 팔았어(최대 ${indicators.maxHoldDays}거래일). 국내 ${indicators.symbols}종목, ${indicators.testStart} ~ ${indicators.testEnd}. '시장 대비'는 같은 기간 전체 종목 평균 수익률을 뺀 값이야. 거래 비용(약 0.45%)은 지표 쪽에만 들어가 있어. 앞/뒤는 ${indicators.midDate} 기준으로 기간을 반으로 나눈 결과야. 둘 다 플러스여야 우연이 아닐 가능성이 커.`,
+      '',
+      `같은 기간 전체 종목 평균은 ${pct(indicators.marketReturnPct)}였어. 검증 구간 ${indicators.testDays ?? '-'}거래일 중 상승장(전체 종목 평균 지수가 60일 평균 위)은 ${indicators.bullDays ?? '-'}일이야. 상승장 열은 신호가 나온 날이 상승장이었던 거래만 모은 거야.`,
+      '',
+      '| 지표 | 거래 | 승률 | 평균 순수익 | 평균 보유일 | 시장 대비 | 앞 / 뒤 | 상승장 진입 (건, 시장 대비) | 그 외 진입 (건, 시장 대비) |',
+      '|---|---|---|---|---|---|---|---|---|',
+      ...indicators.results.map(({ name, all: a, firstHalf: f, secondHalf: s, bull: b, notBull: o }) =>
+        `| ${name} | ${a.trades} | ${a.winRatePct == null ? '-' : `${a.winRatePct}%`} | ${pct(a.avgNetPct)} | ${a.avgHeldDays ?? '-'} | **${pct(a.avgExcessPct)}** | ${pct(f.avgExcessPct)} / ${pct(s.avgExcessPct)} | ${b?.trades ?? '-'}건, ${pct(b?.avgExcessPct)} | ${o?.trades ?? '-'}건, ${pct(o?.avgExcessPct)} |`),
+      '',
+      '코드로 옮긴 규칙:',
+      '',
+      ...indicators.results.map(({ name, rule }) => `- **${name}**: ${rule}`),
+    );
+  }
   return lines.join('\n') + '\n';
 }
 
@@ -197,11 +217,13 @@ async function main() {
   if (existsSync(btFile)) backtest = JSON.parse(readFileSync(btFile, 'utf8'));
   const pfFile = join(args.out, 'portfolio-result.json');
   const portfolio = existsSync(pfFile) ? JSON.parse(readFileSync(pfFile, 'utf8')) : null;
+  const indFile = join(args.out, 'indicator-test.json');
+  const indicators = existsSync(indFile) ? JSON.parse(readFileSync(indFile, 'utf8')) : null;
 
   mkdirSync(args.out, { recursive: true });
   const candidates = results.filter((x) => x.res?.pass).map(({ s, res }) => ({ ...s, ...res }));
   writeFileSync(join(args.out, `signals-${asOf}.json`), JSON.stringify(candidates, null, 2) + '\n');
-  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest, portfolio }));
+  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest, portfolio, indicators }));
   console.log(`[scan] ${asOf}: ${candidates.length} candidate(s)`);
 }
 
