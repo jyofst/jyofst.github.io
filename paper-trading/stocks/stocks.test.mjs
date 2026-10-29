@@ -152,3 +152,12 @@ test('indicator strategies: entry next open, exit on the sell rule', async () =>
   assert.equal(t.exitIdx, WARMUP + 4);
   assert.equal(t.heldDays, 4);
 });
+
+test('market regime: bull while the index is above its own average', async () => {
+  const { marketRegime } = await import('./indicator-test.mjs');
+  const level = new Map(Array.from({ length: 80 }, (_, i) => [`D${String(i).padStart(3, '0')}`, i < 70 ? 1 + i / 100 : 1.69 - (i - 69) / 10]));
+  const r = marketRegime(level, 60);
+  assert.equal(r.get('D010'), false, 'no average yet');
+  assert.equal(r.get('D065'), true);
+  assert.equal(r.get('D079'), false);
+});

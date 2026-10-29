@@ -161,6 +161,14 @@ function marketIndex(series) {
   return level;
 }
 
+// A day is "bull" when the equal-weight universe closes above its own
+// 60-day average: a plain, rule-free way to split the window by regime.
+export function marketRegime(level, n = 60) {
+  const dates = [...level.keys()];
+  const avg = sma(dates.map((d) => level.get(d)), n);
+  return new Map(dates.map((d, i) => [d, avg[i] != null && level.get(d) > avg[i]]));
+}
+
 function summarize(trades) {
   const r = (v) => (v == null ? null : Number(v.toFixed(2)));
   const avg = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
@@ -185,6 +193,9 @@ function main() {
   const dates = [...market.keys()];
   const testStart = dates[WARMUP] ?? dates[0];
   const midDate = dates[Math.floor((dates.indexOf(testStart) + dates.length) / 2)];
+  const bull = marketRegime(market);
+  const testDates = dates.filter((d) => d >= testStart);
+  const bullDays = testDates.filter((d) => bull.get(d)).length;
 
   const results = STRATEGIES.map((strat) => {
     const trades = [];
@@ -198,7 +209,7 @@ function main() {
           const before = market.get(bars[t.entryIdx - 1].date);
           const after = market.get(t.exitDate);
           const mkt = before && after ? (after / before - 1) * 100 : 0;
-          trades.push({ ...t, excessPct: t.netPct - mkt });
+          trades.push({ ...t, excessPct: t.netPct - mkt, bull: bull.get(bars[t.entryIdx - 1].date) });
         }
       }
     }
@@ -208,10 +219,17 @@ function main() {
       all: summarize(trades),
       firstHalf: summarize(trades.filter((t) => t.entryDate < midDate)),
       secondHalf: summarize(trades.filter((t) => t.entryDate >= midDate)),
+      bull: summarize(trades.filter((t) => t.bull)),
+      notBull: summarize(trades.filter((t) => !t.bull)),
     };
   });
 
-  const summary = { testStart, midDate, testEnd: dates.at(-1), symbols: series.length, maxHoldDays: MAX_HOLD_DAYS, cost: COST, results };
+  const summary = {
+    testStart, midDate, testEnd: dates.at(-1), symbols: series.length,
+    testDays: testDates.length, bullDays,
+    marketReturnPct: Number(((market.get(dates.at(-1)) / market.get(testStart) - 1) * 100).toFixed(2)),
+    maxHoldDays: MAX_HOLD_DAYS, cost: COST, results,
+  };
   mkdirSync(args.out, { recursive: true });
   writeFileSync(join(args.out, 'indicator-test.json'), JSON.stringify(summary, null, 2) + '\n');
   console.log(JSON.stringify(results.map((r) => ({ name: r.name, ...r.all })), null, 2));

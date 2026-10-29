@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds the stock universe and downloads about a year of daily bars.
+// Builds the stock universe and downloads `--years` (default 3) of daily bars.
 //
 // With DATA_GO_KR_KEY set (a free service key for the Financial Services
 // Commission stock price API on data.go.kr), the universe is the KOSPI top
@@ -7,7 +7,7 @@
 // Without it, only the holdings are collected. Holdings listed abroad are
 // always priced from Yahoo Finance's chart endpoint.
 //
-// Usage: DATA_GO_KR_KEY=... node collect.mjs [--out ./data] [--kospi 200] [--kosdaq 150]
+// Usage: DATA_GO_KR_KEY=... node collect.mjs [--out ./data] [--kospi 200] [--kosdaq 150] [--years 3]
 
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -19,7 +19,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const KRX_API = 'https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2';
 
 function parseArgs(argv) {
-  const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, holdings: join(HERE, 'holdings.json') };
+  const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, years: 3, holdings: join(HERE, 'holdings.json') };
   for (let i = 0; i < argv.length; i += 2) {
     const key = argv[i].replace(/^--/, '');
     if (!(key in args)) throw new Error(`unknown option --${key}`);
@@ -93,13 +93,15 @@ export function yahooBars(json) {
     .filter((b) => [b.open, b.high, b.low, b.close, b.volume].every((v) => v != null));
 }
 
-async function fetchBars(s, key) {
+async function fetchBars(s, key, years) {
   if (key && s.currency === 'KRW') {
     const since = new Date();
-    since.setUTCFullYear(since.getUTCFullYear() - 1);
-    return krxBars(await krxItems(key, { likeSrtnCd: s.symbol.slice(0, 6), beginBasDt: ymd(since), numOfRows: '400' }));
+    since.setUTCFullYear(since.getUTCFullYear() - years);
+    // About 250 trading days a year, with room to spare.
+    const rows = String(years * 260 + 50);
+    return krxBars(await krxItems(key, { likeSrtnCd: s.symbol.slice(0, 6), beginBasDt: ymd(since), numOfRows: rows }));
   }
-  return yahooBars(await getJson(`https://query1.finance.yahoo.com/v8/finance/chart/${s.symbol}?interval=1d&range=1y`));
+  return yahooBars(await getJson(`https://query1.finance.yahoo.com/v8/finance/chart/${s.symbol}?interval=1d&range=${years}y`));
 }
 
 async function main() {
@@ -143,7 +145,7 @@ async function main() {
   const failed = [];
   for (const s of universe) {
     try {
-      const bars = await fetchBars(s, key);
+      const bars = await fetchBars(s, key, args.years);
       if (!bars.length) throw new Error('no bars');
       const lines = bars.map((b) => [b.date, b.open, b.high, b.low, b.close, b.volume].join(','));
       writeFileSync(join(barsDir, `${s.symbol}.csv`), ['date,open,high,low,close,volume', ...lines].join('\n') + '\n');
