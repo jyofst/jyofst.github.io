@@ -14,7 +14,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const KRX_API = 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo';
+// Keys issued for the current (V2) service are rejected by the older
+// /service/GetStockSecuritiesInfoService path as "unregistered".
+const KRX_API = 'https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2';
 
 function parseArgs(argv) {
   const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, holdings: join(HERE, 'holdings.json') };
