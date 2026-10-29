@@ -19,7 +19,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const KRX_API = 'https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2';
 
 function parseArgs(argv) {
-  const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, years: 3, holdings: join(HERE, 'holdings.json') };
+  const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, years: 3, concurrency: 4, holdings: join(HERE, 'holdings.json') };
   for (let i = 0; i < argv.length; i += 2) {
     const key = argv[i].replace(/^--/, '');
     if (!(key in args)) throw new Error(`unknown option --${key}`);
@@ -143,18 +143,24 @@ async function main() {
   const barsDir = join(args.out, 'bars');
   mkdirSync(barsDir, { recursive: true });
   const failed = [];
-  for (const s of universe) {
-    try {
-      const bars = await fetchBars(s, key, args.years);
-      if (!bars.length) throw new Error('no bars');
-      const lines = bars.map((b) => [b.date, b.open, b.high, b.low, b.close, b.volume].join(','));
-      writeFileSync(join(barsDir, `${s.symbol}.csv`), ['date,open,high,low,close,volume', ...lines].join('\n') + '\n');
-    } catch (err) {
-      failed.push(s.symbol);
-      console.warn(`[collect] ${s.symbol}: ${err.message}`);
+  // A few requests at a time: one year per symbol took ~6 minutes in a row,
+  // three years took over 20.
+  const queue = [...universe];
+  const worker = async () => {
+    for (let s = queue.shift(); s; s = queue.shift()) {
+      try {
+        const bars = await fetchBars(s, key, args.years);
+        if (!bars.length) throw new Error('no bars');
+        const lines = bars.map((b) => [b.date, b.open, b.high, b.low, b.close, b.volume].join(','));
+        writeFileSync(join(barsDir, `${s.symbol}.csv`), ['date,open,high,low,close,volume', ...lines].join('\n') + '\n');
+      } catch (err) {
+        failed.push(s.symbol);
+        console.warn(`[collect] ${s.symbol}: ${err.message}`);
+      }
+      await sleep(150);
     }
-    await sleep(150);
-  }
+  };
+  await Promise.all(Array.from({ length: args.concurrency }, worker));
   writeFileSync(join(args.out, 'universe.json'), JSON.stringify({ updatedAt: new Date().toISOString(), scope: key ? 'market' : 'holdings', keyError, failed, symbols: universe }, null, 2) + '\n');
   console.log(`[collect] ${universe.length - failed.length}/${universe.length} symbols saved`);
 }
