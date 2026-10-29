@@ -101,3 +101,26 @@ test('optional checks: aligned averages and a bounce candle', () => {
   const bounced = [...bars.slice(0, -1), { ...bars.at(-1), open: bars.at(-1).close * 0.99, close: bars.at(-2).close * 1.001 }];
   assert.ok(!evaluate(bounced, bounced.length - 1, strict).failed.includes('bounce'));
 });
+
+test('portfolio: caps open positions, buys the most liquid signal, closes on a price break', async () => {
+  const { simulatePortfolio, benchmark } = await import('./portfolio.mjs');
+  const dated = (bars) => bars.map((b, i) => ({ ...b, date: `D${String(i).padStart(3, '0')}` }));
+  const a = dated(pullbackSeries());
+  const b = dated(pullbackSeries().map((x) => ({ ...x, volume: x.volume * 2 })));
+  // Day after the signal: both rise; then flat until the max hold.
+  for (const s of [a, b]) for (let i = 0; i < cfg.maxHoldDays + 1; i++) s.push({ ...bar(93 + i, s.at(-1).close), date: `D${String(93 + i).padStart(3, '0')}` });
+  const pf = { startingCashKrw: 1_000_000, positionPct: 50, maxPositions: 1 };
+  const { stats, trades } = simulatePortfolio(
+    [{ symbol: 'A', segs: [a] }, { symbol: 'B', segs: [b] }], rules, cfg, pf);
+  assert.ok(stats.skippedFull >= 1, 'A signal waits while the only slot is taken');
+  assert.equal(trades[0].symbol, 'B', 'B trades twice the volume, so it fills first');
+  assert.ok(stats.openAtEnd + stats.trades >= 1);
+
+  const split = dated(pullbackSeries());
+  const after = [0, 1, 2].map((i) => ({ ...bar(93 + i, split.at(-1).close / 5), date: `D${String(93 + i).padStart(3, '0')}` }));
+  const r = simulatePortfolio([{ symbol: 'S', segs: [split, after] }], rules, cfg, { ...pf, maxPositions: 5 });
+  assert.equal(r.stats.trades, 0, 'signal on the last pre-split bar never fills across the break');
+
+  const bm = benchmark([{ symbol: 'S', segs: [split.slice(-3), after] }], split.at(-3).date);
+  assert.ok(bm.returnPct > -10, 'a 5:1 split is not counted as an 80% loss');
+});
