@@ -1,0 +1,265 @@
+{
+  "testStart": "2026-04-27",
+  "midDate": "2026-07-28",
+  "testEnd": "2026-10-28",
+  "symbols": 350,
+  "maxHoldDays": 30,
+  "cost": {
+    "buyPct": 0.1,
+    "sellPct": 0.35
+  },
+  "results": [
+    {
+      "name": "EMA 20/60/120",
+      "rule": "매수: 20>60>120 정배열에서 종가가 EMA20을 아래→위로 돌파 · 매도: 종가가 EMA20 아래로 이탈",
+      "all": {
+        "trades": 768,
+        "winRatePct": 14.19,
+        "avgNetPct": -3.97,
+        "medianNetPct": -4.21,
+        "avgHeldDays": 4.47,
+        "avgExcessPct": -1.92
+      },
+      "firstHalf": {
+        "trades": 546,
+        "winRatePct": 10.44,
+        "avgNetPct": -5.05,
+        "medianNetPct": -5.11,
+        "avgHeldDays": 3.86,
+        "avgExcessPct": -2.15
+      },
+      "secondHalf": {
+        "trades": 222,
+        "winRatePct": 23.42,
+        "avgNetPct": -1.32,
+        "medianNetPct": -2.4,
+        "avgHeldDays": 5.97,
+        "avgExcessPct": -1.35
+      }
+    },
+    {
+      "name": "고정 VWAP",
+      "rule": "매수: 60일 최저점 기준 VWAP 위에서 종가 2일 연속 마감(전에는 아래) · 매도: 종가가 VWAP 아래",
+      "all": {
+        "trades": 2165,
+        "winRatePct": 22.12,
+        "avgNetPct": -2.07,
+        "medianNetPct": -3.4,
+        "avgHeldDays": 6.46,
+        "avgExcessPct": -1.22
+      },
+      "firstHalf": {
+        "trades": 1278,
+        "winRatePct": 15.49,
+        "avgNetPct": -4.31,
+        "medianNetPct": -4.63,
+        "avgHeldDays": 4.31,
+        "avgExcessPct": -1.42
+      },
+      "secondHalf": {
+        "trades": 887,
+        "winRatePct": 31.68,
+        "avgNetPct": 1.17,
+        "medianNetPct": -2.15,
+        "avgHeldDays": 9.57,
+        "avgExcessPct": -0.94
+      }
+    },
+    {
+      "name": "슈퍼트렌드 10,3",
+      "rule": "매수: 하락→상승 추세 전환 · 매도: 상승→하락 전환",
+      "all": {
+        "trades": 433,
+        "winRatePct": 28.64,
+        "avgNetPct": -6.26,
+        "medianNetPct": -10,
+        "avgHeldDays": 20.89,
+        "avgExcessPct": -2.93
+      },
+      "firstHalf": {
+        "trades": 206,
+        "winRatePct": 17.96,
+        "avgNetPct": -11.97,
+        "medianNetPct": -14.57,
+        "avgHeldDays": 17.26,
+        "avgExcessPct": -3.65
+      },
+      "secondHalf": {
+        "trades": 227,
+        "winRatePct": 38.33,
+        "avgNetPct": -1.07,
+        "medianNetPct": -4.87,
+        "avgHeldDays": 24.19,
+        "avgExcessPct": -2.28
+      }
+    },
+    {
+      "name": "볼린저 밴드 20,2",
+      "rule": "매수: 최근 5일 안에 하단밴드를 찍고 종가가 중앙선을 상향 돌파 · 매도: 종가가 중앙선 아래",
+      "all": {
+        "trades": 677,
+        "winRatePct": 19.35,
+        "avgNetPct": -2.01,
+        "medianNetPct": -3.58,
+        "avgHeldDays": 6.56,
+        "avgExcessPct": -1.44
+      },
+      "firstHalf": {
+        "trades": 359,
+        "winRatePct": 8.91,
+        "avgNetPct": -4.66,
+        "medianNetPct": -5.06,
+        "avgHeldDays": 4.37,
+        "avgExcessPct": -1.41
+      },
+      "secondHalf": {
+        "trades": 318,
+        "winRatePct": 31.13,
+        "avgNetPct": 0.98,
+        "medianNetPct": -1.82,
+        "avgHeldDays": 9.04,
+        "avgExcessPct": -1.48
+      }
+    },
+    {
+      "name": "거래량 + MFI/OBV",
+      "rule": "매수: 거래량 ≥ 20일 평균의 1.5배 + MFI 상승(80 미만) + OBV 5일 전보다 상승 · 매도: MFI가 80 위에서 꺾임 또는 OBV가 5일 전보다 낮아짐",
+      "all": {
+        "trades": 1186,
+        "winRatePct": 30.02,
+        "avgNetPct": -2.63,
+        "medianNetPct": -3.69,
+        "avgHeldDays": 4.92,
+        "avgExcessPct": -1.51
+      },
+      "firstHalf": {
+        "trades": 600,
+        "winRatePct": 20.17,
+        "avgNetPct": -5.39,
+        "medianNetPct": -5.85,
+        "avgHeldDays": 4.68,
+        "avgExcessPct": -2.5
+      },
+      "secondHalf": {
+        "trades": 586,
+        "winRatePct": 40.1,
+        "avgNetPct": 0.19,
+        "medianNetPct": -1.44,
+        "avgHeldDays": 5.16,
+        "avgExcessPct": -0.5
+      }
+    },
+    {
+      "name": "MACD 12,26,9",
+      "rule": "매수: 0선 위에서 MACD가 시그널을 골든크로스 · 매도: 데드크로스",
+      "all": {
+        "trades": 433,
+        "winRatePct": 18.48,
+        "avgNetPct": -4.3,
+        "medianNetPct": -5.21,
+        "avgHeldDays": 6.85,
+        "avgExcessPct": -1.32
+      },
+      "firstHalf": {
+        "trades": 215,
+        "winRatePct": 12.56,
+        "avgNetPct": -7.46,
+        "medianNetPct": -7.94,
+        "avgHeldDays": 5.78,
+        "avgExcessPct": -2.25
+      },
+      "secondHalf": {
+        "trades": 218,
+        "winRatePct": 24.31,
+        "avgNetPct": -1.18,
+        "medianNetPct": -3.3,
+        "avgHeldDays": 7.9,
+        "avgExcessPct": -0.42
+      }
+    },
+    {
+      "name": "RSI 14",
+      "rule": "매수: 최근 10일 안에 40 이하였다가 50을 상향 돌파 · 매도: 50 하향 이탈 또는 70 위에서 꺾임",
+      "all": {
+        "trades": 879,
+        "winRatePct": 15.81,
+        "avgNetPct": -2.51,
+        "medianNetPct": -3.51,
+        "avgHeldDays": 4.95,
+        "avgExcessPct": -1.48
+      },
+      "firstHalf": {
+        "trades": 454,
+        "winRatePct": 7.27,
+        "avgNetPct": -4.73,
+        "medianNetPct": -4.48,
+        "avgHeldDays": 3.23,
+        "avgExcessPct": -1.42
+      },
+      "secondHalf": {
+        "trades": 425,
+        "winRatePct": 24.94,
+        "avgNetPct": -0.13,
+        "medianNetPct": -2.32,
+        "avgHeldDays": 6.78,
+        "avgExcessPct": -1.55
+      }
+    },
+    {
+      "name": "DMI + ADX 14",
+      "rule": "매수: +DI가 -DI를 상향 돌파 + ADX ≥ 25이고 상승 · 매도: -DI가 +DI 위로 또는 ADX 25 미만",
+      "all": {
+        "trades": 4,
+        "winRatePct": 25,
+        "avgNetPct": 0.64,
+        "medianNetPct": -11.64,
+        "avgHeldDays": 13.5,
+        "avgExcessPct": 13.91
+      },
+      "firstHalf": {
+        "trades": 4,
+        "winRatePct": 25,
+        "avgNetPct": 0.64,
+        "medianNetPct": -11.64,
+        "avgHeldDays": 13.5,
+        "avgExcessPct": 13.91
+      },
+      "secondHalf": {
+        "trades": 0,
+        "winRatePct": null,
+        "avgNetPct": null,
+        "medianNetPct": null,
+        "avgHeldDays": null,
+        "avgExcessPct": null
+      }
+    },
+    {
+      "name": "종합: ADX + VWAP + MFI + ATR 손절",
+      "rule": "매수: ADX ≥ 25·+DI > -DI·종가 > VWAP·MFI 상승이 처음 동시에 충족 · 매도: 종가 < 진입가 − ATR×2 또는 종가 < VWAP",
+      "all": {
+        "trades": 569,
+        "winRatePct": 13.71,
+        "avgNetPct": -4.76,
+        "medianNetPct": -8.77,
+        "avgHeldDays": 10.82,
+        "avgExcessPct": -1.47
+      },
+      "firstHalf": {
+        "trades": 366,
+        "winRatePct": 13.39,
+        "avgNetPct": -4.02,
+        "medianNetPct": -9.34,
+        "avgHeldDays": 10.35,
+        "avgExcessPct": -0.04
+      },
+      "secondHalf": {
+        "trades": 203,
+        "winRatePct": 14.29,
+        "avgNetPct": -6.09,
+        "medianNetPct": -8.18,
+        "avgHeldDays": 11.67,
+        "avgExcessPct": -4.05
+      }
+    }
+  ]
+}
