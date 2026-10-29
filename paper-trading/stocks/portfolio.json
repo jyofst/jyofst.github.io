@@ -1,0 +1,6 @@
+{
+  "startingCashKrw": 10000000,
+  "positionPct": 10,
+  "maxPositions": 10,
+  "variants": ["기본 규칙", "정배열 + 반등 양봉"]
+}

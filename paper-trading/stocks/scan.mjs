@@ -99,7 +99,7 @@ function fmtPrice(x, currency) {
   return currency === 'USD' ? `$${x.toFixed(2)}` : `${Math.round(x).toLocaleString('en-US')}원`;
 }
 
-export function renderReport({ asOf, universe, results, backtest }) {
+export function renderReport({ asOf, universe, results, backtest, portfolio }) {
   const name = (s) => `${s.name} (${s.symbol.replace(/\.(KS|KQ)$/, '')})`;
   const candidates = results.filter((x) => x.res?.pass && !x.s.holding).sort((a, b) => a.res.disparity20 - b.res.disparity20);
   const lines = [
@@ -164,6 +164,22 @@ export function renderReport({ asOf, universe, results, backtest }) {
       );
     }
   }
+  if (portfolio) {
+    const c = portfolio.config;
+    const won = (x) => `${Math.round(x).toLocaleString('en-US')}원`;
+    lines.push(
+      '',
+      '## 계좌 시뮬레이션 (리스크 단계)',
+      '',
+      `국내 ${portfolio.symbols}종목, ${portfolio.startDate} ~ ${portfolio.endDate}. 시작 자금 ${won(c.startingCashKrw)}으로 출발해. 종목당 계좌의 ${c.positionPct}%씩 사고, 동시에 최대 ${c.maxPositions}종목까지 들고 있어. 같은 날 신호가 자리보다 많으면 거래대금이 큰 종목부터 사. 청산 규칙과 비용은 위 백테스트와 같아. 비교 기준은 같은 종목들을 첫날 똑같은 금액씩 사서 그대로 들고 간 경우야.`,
+      '',
+      '| 규칙 | 최종 자산 | 수익률 | 최대 낙폭 | 거래 | 승률 | 평균 투자 비중 | 자리 없어 놓친 신호 |',
+      '|---|---|---|---|---|---|---|---|',
+      ...portfolio.variants.map(({ name, stats: s }) =>
+        `| ${name} | ${won(s.endingEquity)} | ${s.returnPct}% | ${s.maxDrawdownPct}% | ${s.trades} | ${s.winRatePct ?? '-'}% | ${s.avgInvestedPct}% | ${s.skippedFull} |`),
+      `| 첫날 사서 보유 (비교 기준) | - | ${portfolio.benchmark.returnPct}% | ${portfolio.benchmark.maxDrawdownPct}% | - | - | 100% | - |`,
+    );
+  }
   return lines.join('\n') + '\n';
 }
 
@@ -179,11 +195,13 @@ async function main() {
   let backtest = null;
   const btFile = join(args.out, 'backtest.json');
   if (existsSync(btFile)) backtest = JSON.parse(readFileSync(btFile, 'utf8'));
+  const pfFile = join(args.out, 'portfolio-result.json');
+  const portfolio = existsSync(pfFile) ? JSON.parse(readFileSync(pfFile, 'utf8')) : null;
 
   mkdirSync(args.out, { recursive: true });
   const candidates = results.filter((x) => x.res?.pass).map(({ s, res }) => ({ ...s, ...res }));
   writeFileSync(join(args.out, `signals-${asOf}.json`), JSON.stringify(candidates, null, 2) + '\n');
-  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest }));
+  writeFileSync(join(args.out, 'report.md'), renderReport({ asOf, universe, results, backtest, portfolio }));
   console.log(`[scan] ${asOf}: ${candidates.length} candidate(s)`);
 }
 

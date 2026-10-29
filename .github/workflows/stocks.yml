@@ -46,6 +46,7 @@ jobs:
       - name: Backtest and scan
         run: |
           node paper-trading/stocks/backtest.mjs --data data --out store
+          node paper-trading/stocks/portfolio.mjs --data data --out store
           node paper-trading/stocks/scan.mjs --data data --out store
           cp data/universe.json store/
 
