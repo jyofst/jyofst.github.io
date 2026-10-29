@@ -14,7 +14,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const KRX_API = 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo';
+// Keys issued for the current (V2) service are rejected by the older
+// /service/GetStockSecuritiesInfoService path as "unregistered".
+const KRX_API = 'https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2';
 
 function parseArgs(argv) {
   const args = { out: join(HERE, 'data'), kospi: 200, kosdaq: 150, holdings: join(HERE, 'holdings.json') };
@@ -118,8 +120,19 @@ async function main() {
       // A rejected key (e.g. not yet active after approval) should still leave
       // the holdings report running; the report shows why the market is missing.
       keyError = err.message;
+      // The secret is masked in logs, so describe its shape (never its value)
+      // to tell a pasted URL fragment or truncated copy from a real rejection.
+      const shape = {
+        length: rawKey.length,
+        percentEncoded: rawKey.includes('%'),
+        startsWithServiceKey: /^servicekey/i.test(rawKey),
+        hasAmpersand: rawKey.includes('&'),
+        hasInnerWhitespace: /\s/.test(rawKey),
+        endsWithPadding: /(==|%3D%3D)$/i.test(rawKey),
+      };
       key = undefined;
       console.warn(`[collect] data.go.kr unavailable, collecting holdings only: ${keyError}`);
+      console.warn(`[collect] DATA_GO_KR_KEY shape: ${JSON.stringify(shape)}`);
     }
   } else {
     console.warn('[collect] DATA_GO_KR_KEY not set: collecting holdings only');
