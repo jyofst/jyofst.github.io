@@ -1,1 +1,380 @@
-[]
+[
+  {
+    "symbol": "373220.KS",
+    "name": "LG에너지솔루션",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 389500,
+    "aligned": false,
+    "disparity20": 99.4,
+    "fromHighPct": -10,
+    "volRatio": 0.85,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006400.KS",
+    "name": "삼성SDI",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 534000,
+    "aligned": false,
+    "disparity20": 99,
+    "fromHighPct": -11,
+    "volRatio": 0.95,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "011200.KS",
+    "name": "HMM",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 22150,
+    "aligned": true,
+    "disparity20": 99.5,
+    "fromHighPct": -8.7,
+    "volRatio": 0.56,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "021240.KS",
+    "name": "코웨이",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 101600,
+    "aligned": true,
+    "disparity20": 98.2,
+    "fromHighPct": -9.1,
+    "volRatio": 0.82,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "353200.KS",
+    "name": "대덕전자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 138000,
+    "aligned": false,
+    "disparity20": 99.9,
+    "fromHighPct": -14.3,
+    "volRatio": 0.88,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "018880.KS",
+    "name": "한온시스템",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 3710,
+    "aligned": false,
+    "disparity20": 98.5,
+    "fromHighPct": -9.2,
+    "volRatio": 0.41,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "026960.KS",
+    "name": "동서",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 27400,
+    "aligned": true,
+    "disparity20": 101.3,
+    "fromHighPct": -7.3,
+    "volRatio": 0.66,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006280.KS",
+    "name": "녹십자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 130500,
+    "aligned": true,
+    "disparity20": 101.5,
+    "fromHighPct": -5.1,
+    "volRatio": 0.87,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "031980.KQ",
+    "name": "피에스케이홀딩스",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 193000,
+    "aligned": false,
+    "disparity20": 102,
+    "fromHighPct": -11.9,
+    "volRatio": 0.88,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "010170.KQ",
+    "name": "대한광통신",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 14980,
+    "aligned": false,
+    "disparity20": 99,
+    "fromHighPct": -24.6,
+    "volRatio": 0.94,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "043260.KQ",
+    "name": "성호전자",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 28700,
+    "aligned": false,
+    "disparity20": 100.7,
+    "fromHighPct": -20.5,
+    "volRatio": 0.6,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "041510.KQ",
+    "name": "에스엠",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 80300,
+    "aligned": true,
+    "disparity20": 99.1,
+    "fromHighPct": -9.4,
+    "volRatio": 0.71,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "039200.KQ",
+    "name": "오스코텍",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 36650,
+    "aligned": false,
+    "disparity20": 99.3,
+    "fromHighPct": -10.3,
+    "volRatio": 0.73,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "086450.KQ",
+    "name": "동국제약",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 24050,
+    "aligned": true,
+    "disparity20": 102.2,
+    "fromHighPct": -8.4,
+    "volRatio": 0.72,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "251970.KQ",
+    "name": "펌텍코리아",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 66000,
+    "aligned": true,
+    "disparity20": 98.5,
+    "fromHighPct": -9.8,
+    "volRatio": 0.76,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "295310.KQ",
+    "name": "에이치브이엠",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 62400,
+    "aligned": false,
+    "disparity20": 97,
+    "fromHighPct": -19.8,
+    "volRatio": 0.77,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006730.KQ",
+    "name": "서부T&D",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 11540,
+    "aligned": false,
+    "disparity20": 98.8,
+    "fromHighPct": -11.9,
+    "volRatio": 0.61,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "023160.KQ",
+    "name": "태광",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-10-28",
+    "close": 26450,
+    "aligned": false,
+    "disparity20": 99.3,
+    "fromHighPct": -10.8,
+    "volRatio": 0.65,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]

@@ -7,15 +7,15 @@
     "maxHoldDays": 10
   },
   "signal": {
-    "trades": 19,
-    "winRatePct": 42.11,
-    "avgNetPct": 0.39,
-    "medianNetPct": -6.25
+    "trades": 1290,
+    "winRatePct": 32.87,
+    "avgNetPct": -1.77,
+    "medianNetPct": -5.99
   },
   "baseline": {
-    "trades": 823,
-    "winRatePct": 40.95,
-    "avgNetPct": 0.12,
-    "medianNetPct": -5.92
+    "trades": 55643,
+    "winRatePct": 36.05,
+    "avgNetPct": -0.81,
+    "medianNetPct": -5.69
   }
 }
