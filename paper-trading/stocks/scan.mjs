@@ -31,6 +31,23 @@ export function loadBars(file) {
   });
 }
 
+// KRX caps a day's move at ±30%, so a bigger close-to-close jump in KRW
+// data is a split or merger the unadjusted data.go.kr prices did not absorb.
+// Moving averages across such a jump are meaningless, so split there.
+export function segments(bars, currency, maxMovePct = 30) {
+  if (currency !== 'KRW') return [bars];
+  const out = [];
+  let start = 0;
+  for (let i = 1; i < bars.length; i++) {
+    if (Math.abs(bars[i].close / bars[i - 1].close - 1) * 100 > maxMovePct) {
+      out.push(bars.slice(start, i));
+      start = i;
+    }
+  }
+  out.push(bars.slice(start));
+  return out;
+}
+
 const mean = (xs) => xs.reduce((s, x) => s + x, 0) / xs.length;
 const sma = (bars, i, n, key = 'close') => (i + 1 >= n ? mean(bars.slice(i + 1 - n, i + 1).map((b) => b[key])) : null);
 
@@ -56,6 +73,9 @@ export function evaluate(bars, i, rules, currency = 'KRW') {
     volumeDryUp: volRatio <= rules.volumeDryUpRatio,
     liquidity: avgValue >= minValue,
   };
+  // Optional stricter checks, switched on by experiment variants.
+  if (rules.requireAligned) checks.aligned = ma5 > ma20 && ma20 > ma60;
+  if (rules.requireBounce) checks.bounce = b.close > b.open && b.close > bars[i - 1].close;
   const r = (x, d = 2) => Number(x.toFixed(d));
   return {
     date: b.date,
@@ -72,6 +92,7 @@ export function evaluate(bars, i, rules, currency = 'KRW') {
 
 const CHECK_LABELS = {
   uptrend: '추세', nearMa20: '20일선 근처', pulledBack: '고점 대비 조정', volumeDryUp: '거래량 감소', liquidity: '거래대금',
+  aligned: '정배열', bounce: '반등 양봉',
 };
 
 function fmtPrice(x, currency) {
@@ -126,7 +147,22 @@ export function renderReport({ asOf, universe, results, backtest }) {
       `| 아무 날이나 (비교 기준) | ${bl.trades} | ${bl.winRatePct}% | ${bl.avgNetPct}% | ${bl.medianNetPct}% |`,
       '',
       '범위를 오늘 시가총액 순위로 골랐기 때문에, 1년 사이 크게 오른 종목이 더 많이 들어가 있어(생존 편향). 그래서 두 줄 모두 실제보다 좋게 나올 수 있어. 의미 있게 볼 건 두 줄의 차이야.',
+      '',
+      `종가가 하루에 30% 넘게 변한 날(분할·합병 등으로 가격이 보정되지 않은 날 ${backtest.priceBreaks ?? 0}건)은 그 앞뒤를 이어서 계산하지 않았어.`,
     );
+    if (backtest.variants?.length) {
+      lines.push(
+        '',
+        '### 규칙 비교 실험',
+        '',
+        '| 규칙 | 거래 수 | 승률 | 평균 순수익 | 비교 기준과 차이 |',
+        '|---|---|---|---|---|',
+        ...backtest.variants.map((v) => {
+          const diff = v.stats.avgNetPct == null ? '-' : `${(v.stats.avgNetPct - bl.avgNetPct).toFixed(2)}%p`;
+          return `| ${v.name} | ${v.stats.trades} | ${v.stats.winRatePct ?? '-'}% | ${v.stats.avgNetPct ?? '-'}% | ${diff} |`;
+        }),
+      );
+    }
   }
   return lines.join('\n') + '\n';
 }
@@ -136,7 +172,7 @@ async function main() {
   const rules = JSON.parse(readFileSync(args.rules, 'utf8'));
   const universe = JSON.parse(readFileSync(join(args.data, 'universe.json'), 'utf8'));
   const results = universe.symbols.map((s) => {
-    const bars = loadBars(join(args.data, 'bars', `${s.symbol}.csv`));
+    const bars = segments(loadBars(join(args.data, 'bars', `${s.symbol}.csv`)), s.currency).at(-1);
     return { s, res: bars.length ? evaluate(bars, bars.length - 1, rules, s.currency) : null };
   });
   const asOf = results.map((x) => x.res?.date).filter(Boolean).sort().at(-1);

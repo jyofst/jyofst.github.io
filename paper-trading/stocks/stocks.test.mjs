@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { evaluate } from './scan.mjs';
+import { evaluate, segments } from './scan.mjs';
 import { runTrade, backtestSymbol } from './backtest.mjs';
 import { topByMarketCap, krxBars } from './collect.mjs';
 
@@ -80,4 +80,24 @@ test('KRX rows become sorted bars without halted days', () => {
     { basDt: '20261023', mkp: '95', hipr: '99', lopr: '94', clpr: '98', trqu: '7' },
   ];
   assert.deepEqual(krxBars(rows).map((b) => b.date), ['2026-10-23', '2026-10-27']);
+});
+
+test('splits KRW bars at moves beyond the ±30% daily limit, not USD bars', () => {
+  const closes = [100, 101, 102, 20.4, 20.6];
+  const bars = closes.map((c, i) => bar(i, c));
+  assert.deepEqual(segments(bars, 'KRW').map((seg) => seg.length), [3, 2]);
+  assert.equal(segments(bars, 'USD').length, 1);
+});
+
+test('optional checks: aligned averages and a bounce candle', () => {
+  const bars = pullbackSeries();
+  const strict = { ...rules, requireAligned: true, requireBounce: true };
+  // A 3-day dip keeps the 5-day line above the 20-day, but a falling flat
+  // candle is no bounce.
+  assert.deepEqual(evaluate(bars, bars.length - 1, strict).failed, ['bounce']);
+  const deeper = [...bars];
+  for (let i = 0; i < 3; i++) deeper.push(bar(93 + i, deeper.at(-1).close * 0.98, 500_000));
+  assert.ok(evaluate(deeper, deeper.length - 1, strict).failed.includes('aligned'));
+  const bounced = [...bars.slice(0, -1), { ...bars.at(-1), open: bars.at(-1).close * 0.99, close: bars.at(-2).close * 1.001 }];
+  assert.ok(!evaluate(bounced, bounced.length - 1, strict).failed.includes('bounce'));
 });
