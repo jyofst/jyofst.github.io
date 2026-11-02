@@ -8,41 +8,41 @@
       "정배열 + 반등 양봉"
     ]
   },
-  "startDate": "2026-02-26",
-  "endDate": "2026-10-29",
+  "startDate": "2026-03-03",
+  "endDate": "2026-10-30",
   "symbols": 350,
   "variants": [
     {
       "name": "기본 규칙",
       "stats": {
-        "endingEquity": 8010443,
-        "returnPct": -19.9,
-        "maxDrawdownPct": -40.52,
+        "endingEquity": 8054810,
+        "returnPct": -19.45,
+        "maxDrawdownPct": -40.94,
         "trades": 332,
-        "winRatePct": 38,
-        "avgNetPct": -0.53,
-        "avgInvestedPct": 51.7,
-        "skippedFull": 2344,
-        "openAtEnd": 8
+        "winRatePct": 37.3,
+        "avgNetPct": -0.51,
+        "avgInvestedPct": 51.6,
+        "skippedFull": 2264,
+        "openAtEnd": 7
       }
     },
     {
       "name": "정배열 + 반등 양봉",
       "stats": {
-        "endingEquity": 10954101,
-        "returnPct": 9.54,
-        "maxDrawdownPct": -16.05,
-        "trades": 191,
-        "winRatePct": 44,
-        "avgNetPct": 0.62,
-        "avgInvestedPct": 32.6,
-        "skippedFull": 48,
-        "openAtEnd": 4
+        "endingEquity": 11509024,
+        "returnPct": 15.09,
+        "maxDrawdownPct": -14.43,
+        "trades": 185,
+        "winRatePct": 45.4,
+        "avgNetPct": 0.88,
+        "avgInvestedPct": 33,
+        "skippedFull": 49,
+        "openAtEnd": 5
       }
     }
   ],
   "benchmark": {
-    "returnPct": -14.38,
-    "maxDrawdownPct": -36.8
+    "returnPct": -13.11,
+    "maxDrawdownPct": -36.6
   }
 }
