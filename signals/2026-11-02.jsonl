@@ -1,0 +1,1 @@
+{"type":"ENTRY_CANDIDATE","ts":"2026-11-02T10:00:39.507Z","symbol":"POPCAT","pair":"FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo","priceUsd":0.03997,"meanPrice":0.039807,"abovePct":0.41,"buyRatio":1,"checks":{"liquidity":true,"activity":true,"buyPressure":true,"momentumM5":true,"momentumH1":true,"aboveMean":true,"notChasing":true,"noRecentFlags":true},"failed":[],"pass":true}
