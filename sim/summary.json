@@ -12,8 +12,8 @@
   "totalPnlUsd": -657.75,
   "byReason": {
     "DATA_GAP": {
-      "trades": 36,
-      "pnlUsd": -374.15
+      "trades": 37,
+      "pnlUsd": -382.93
     },
     "TIME": {
       "trades": 43,
@@ -22,10 +22,6 @@
     "TAKE_PROFIT": {
       "trades": 1,
       "pnlUsd": 94.89
-    },
-    "DATA_END": {
-      "trades": 1,
-      "pnlUsd": -8.78
     }
   },
   "bySymbol": {
