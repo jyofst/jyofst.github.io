@@ -1,0 +1,128 @@
+[
+  {
+    "symbol": "011200.KS",
+    "name": "HMM",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-05",
+    "close": 22800,
+    "aligned": true,
+    "disparity20": 99.8,
+    "fromHighPct": -6,
+    "volRatio": 0.64,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "041510.KQ",
+    "name": "에스엠",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-05",
+    "close": 79100,
+    "aligned": false,
+    "disparity20": 98.8,
+    "fromHighPct": -10.7,
+    "volRatio": 0.97,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "086450.KQ",
+    "name": "동국제약",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-05",
+    "close": 24500,
+    "aligned": false,
+    "disparity20": 101.6,
+    "fromHighPct": -6.7,
+    "volRatio": 0.62,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "425420.KQ",
+    "name": "티에프이",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-05",
+    "close": 69200,
+    "aligned": true,
+    "disparity20": 99.7,
+    "fromHighPct": -24.6,
+    "volRatio": 0.97,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "251970.KQ",
+    "name": "펌텍코리아",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-05",
+    "close": 68900,
+    "aligned": false,
+    "disparity20": 101.8,
+    "fromHighPct": -5.9,
+    "volRatio": 0.8,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "033790.KQ",
+    "name": "피노",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-04",
+    "close": 8350,
+    "aligned": false,
+    "disparity20": 99.7,
+    "fromHighPct": -28,
+    "volRatio": 0.53,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
