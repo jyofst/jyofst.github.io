@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "086450.KQ",
+    "name": "동국제약",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-06",
+    "close": 23550,
+    "aligned": false,
+    "disparity20": 97.4,
+    "fromHighPct": -10.3,
+    "volRatio": 0.6,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
