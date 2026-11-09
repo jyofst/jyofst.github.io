@@ -1,23 +1,23 @@
 {
-  "signals": 130,
-  "trades": 114,
-  "completeTrades": 64,
+  "signals": 132,
+  "trades": 116,
+  "completeTrades": 66,
   "skippedMaxPositions": 13,
-  "winRatePct": 9.4,
-  "avgGrossPct": 0.28,
-  "avgNetPct": -0.72,
+  "winRatePct": 10.6,
+  "avgGrossPct": 0.29,
+  "avgNetPct": -0.71,
   "roundTripCostPct": 1,
   "startingCashUsd": 10000,
-  "endingCashUsd": 9049.48,
-  "totalPnlUsd": -950.52,
+  "endingCashUsd": 9044.44,
+  "totalPnlUsd": -955.56,
   "byReason": {
     "DATA_GAP": {
       "trades": 50,
       "pnlUsd": -511.01
     },
     "TIME": {
-      "trades": 63,
-      "pnlUsd": -534.34
+      "trades": 65,
+      "pnlUsd": -539.39
     },
     "TAKE_PROFIT": {
       "trades": 1,
@@ -30,12 +30,12 @@
       "pnlUsd": -115.87
     },
     "BONK": {
-      "trades": 42,
-      "pnlUsd": -396.41
+      "trades": 43,
+      "pnlUsd": -395.87
     },
     "WIF": {
-      "trades": 46,
-      "pnlUsd": -438.18
+      "trades": 47,
+      "pnlUsd": -443.77
     }
   }
 }
