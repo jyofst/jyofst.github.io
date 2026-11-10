@@ -6,63 +6,63 @@
     "takeProfitPct": 10,
     "maxHoldDays": 10
   },
-  "priceBreaks": 45,
+  "priceBreaks": 43,
   "signal": {
-    "trades": 1091,
-    "winRatePct": 33.09,
-    "avgNetPct": -1.37,
-    "medianNetPct": -5.83
+    "trades": 1098,
+    "winRatePct": 33.33,
+    "avgNetPct": -1.33,
+    "medianNetPct": -5.82
   },
   "baseline": {
-    "trades": 53146,
-    "winRatePct": 35.65,
-    "avgNetPct": -0.86,
+    "trades": 53616,
+    "winRatePct": 35.59,
+    "avgNetPct": -0.88,
     "medianNetPct": -5.67
   },
   "variants": [
     {
       "name": "기본 규칙",
       "stats": {
-        "trades": 1091,
-        "winRatePct": 33.09,
-        "avgNetPct": -1.37,
-        "medianNetPct": -5.83
+        "trades": 1098,
+        "winRatePct": 33.33,
+        "avgNetPct": -1.33,
+        "medianNetPct": -5.82
       }
     },
     {
       "name": "정배열 종목만",
       "stats": {
-        "trades": 637,
-        "winRatePct": 33.91,
-        "avgNetPct": -1.3,
-        "medianNetPct": -5.76
+        "trades": 642,
+        "winRatePct": 34.11,
+        "avgNetPct": -1.26,
+        "medianNetPct": -5.75
       }
     },
     {
       "name": "반등 양봉 확인 후",
       "stats": {
-        "trades": 674,
-        "winRatePct": 35.46,
-        "avgNetPct": -1.1,
+        "trades": 679,
+        "winRatePct": 35.49,
+        "avgNetPct": -1.09,
         "medianNetPct": -5.87
       }
     },
     {
       "name": "정배열 + 반등 양봉",
       "stats": {
-        "trades": 214,
-        "winRatePct": 42.52,
-        "avgNetPct": 0.11,
+        "trades": 216,
+        "winRatePct": 42.13,
+        "avgNetPct": 0.03,
         "medianNetPct": -5.46
       }
     },
     {
       "name": "거래량 감소 조건 제외",
       "stats": {
-        "trades": 1471,
-        "winRatePct": 32.49,
-        "avgNetPct": -1.5,
-        "medianNetPct": -5.94
+        "trades": 1479,
+        "winRatePct": 32.66,
+        "avgNetPct": -1.47,
+        "medianNetPct": -5.92
       }
     }
   ]

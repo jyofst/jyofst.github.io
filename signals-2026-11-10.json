@@ -1,0 +1,65 @@
+[
+  {
+    "symbol": "300720.KS",
+    "name": "한일시멘트",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-09",
+    "close": 16410,
+    "aligned": false,
+    "disparity20": 98,
+    "fromHighPct": -6.1,
+    "volRatio": 0.89,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "251970.KQ",
+    "name": "펌텍코리아",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-09",
+    "close": 69000,
+    "aligned": false,
+    "disparity20": 101.5,
+    "fromHighPct": -5.7,
+    "volRatio": 0.93,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "425420.KQ",
+    "name": "티에프이",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-09",
+    "close": 68600,
+    "aligned": true,
+    "disparity20": 98.7,
+    "fromHighPct": -25.3,
+    "volRatio": 0.97,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
