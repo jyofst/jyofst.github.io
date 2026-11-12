@@ -1,0 +1,86 @@
+[
+  {
+    "symbol": "078600.KQ",
+    "name": "대주전자재료",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-11",
+    "close": 92700,
+    "aligned": false,
+    "disparity20": 99,
+    "fromHighPct": -19.7,
+    "volRatio": 0.92,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "445680.KQ",
+    "name": "큐리옥스바이오시스템즈",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-11",
+    "close": 57900,
+    "aligned": false,
+    "disparity20": 102.3,
+    "fromHighPct": -26.2,
+    "volRatio": 0.63,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "059090.KQ",
+    "name": "미코",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-11",
+    "close": 22200,
+    "aligned": false,
+    "disparity20": 102.7,
+    "fromHighPct": -16.2,
+    "volRatio": 0.91,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "253590.KQ",
+    "name": "네오셈",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-11",
+    "close": 15680,
+    "aligned": false,
+    "disparity20": 101.4,
+    "fromHighPct": -17.3,
+    "volRatio": 0.95,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
