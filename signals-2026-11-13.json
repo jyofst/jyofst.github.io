@@ -1,0 +1,107 @@
+[
+  {
+    "symbol": "457190.KS",
+    "name": "이수스페셜티케미컬",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-12",
+    "close": 74800,
+    "aligned": false,
+    "disparity20": 101,
+    "fromHighPct": -19,
+    "volRatio": 0.9,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "294870.KS",
+    "name": "IPARK현대산업개발",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-12",
+    "close": 23850,
+    "aligned": true,
+    "disparity20": 102.1,
+    "fromHighPct": -8.1,
+    "volRatio": 0.91,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "086450.KQ",
+    "name": "동국제약",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-12",
+    "close": 24800,
+    "aligned": true,
+    "disparity20": 102,
+    "fromHighPct": -5.5,
+    "volRatio": 0.55,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "059090.KQ",
+    "name": "미코",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-12",
+    "close": 21400,
+    "aligned": false,
+    "disparity20": 98.9,
+    "fromHighPct": -19.2,
+    "volRatio": 0.74,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "126340.KQ",
+    "name": "비나텍",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-12",
+    "close": 91800,
+    "aligned": false,
+    "disparity20": 97.5,
+    "fromHighPct": -24.4,
+    "volRatio": 0.87,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
