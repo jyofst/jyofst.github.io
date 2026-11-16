@@ -1,0 +1,65 @@
+[
+  {
+    "symbol": "006280.KS",
+    "name": "녹십자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-13",
+    "close": 134000,
+    "aligned": true,
+    "disparity20": 99.7,
+    "fromHighPct": -7.8,
+    "volRatio": 0.9,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "293490.KQ",
+    "name": "카카오게임즈",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-13",
+    "close": 11500,
+    "aligned": true,
+    "disparity20": 99.9,
+    "fromHighPct": -11.1,
+    "volRatio": 0.57,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "086450.KQ",
+    "name": "동국제약",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-13",
+    "close": 23900,
+    "aligned": true,
+    "disparity20": 98.5,
+    "fromHighPct": -9,
+    "volRatio": 0.68,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
