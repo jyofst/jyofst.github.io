@@ -1,0 +1,107 @@
+[
+  {
+    "symbol": "021240.KS",
+    "name": "코웨이",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-16",
+    "close": 105000,
+    "aligned": false,
+    "disparity20": 101,
+    "fromHighPct": -6.1,
+    "volRatio": 0.99,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "294870.KS",
+    "name": "IPARK현대산업개발",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-16",
+    "close": 24300,
+    "aligned": true,
+    "disparity20": 102.7,
+    "fromHighPct": -6.4,
+    "volRatio": 0.83,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006280.KS",
+    "name": "녹십자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-16",
+    "close": 133200,
+    "aligned": true,
+    "disparity20": 99.1,
+    "fromHighPct": -8.4,
+    "volRatio": 0.87,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "293490.KQ",
+    "name": "카카오게임즈",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-16",
+    "close": 11740,
+    "aligned": true,
+    "disparity20": 101.4,
+    "fromHighPct": -9.2,
+    "volRatio": 0.56,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "089890.KQ",
+    "name": "코세스",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-16",
+    "close": 31900,
+    "aligned": false,
+    "disparity20": 97.3,
+    "fromHighPct": -22,
+    "volRatio": 0.88,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
