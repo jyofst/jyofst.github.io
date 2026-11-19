@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T16:31:52.072Z",
+  "updatedAt": "2026-11-19T16:38:39.027Z",
   "scope": "market",
   "keyError": null,
   "failed": [],
@@ -76,14 +76,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "068270.KS",
-      "name": "셀트리온",
+      "symbol": "032830.KS",
+      "name": "삼성생명",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "032830.KS",
-      "name": "삼성생명",
+      "symbol": "068270.KS",
+      "name": "셀트리온",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -106,6 +106,12 @@
       "currency": "KRW"
     },
     {
+      "symbol": "034730.KS",
+      "name": "SK",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "006400.KS",
       "name": "삼성SDI",
       "market": "KOSPI",
@@ -114,12 +120,6 @@
     {
       "symbol": "086790.KS",
       "name": "하나금융지주",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "034730.KS",
-      "name": "SK",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -148,14 +148,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "316140.KS",
-      "name": "우리금융지주",
+      "symbol": "000810.KS",
+      "name": "삼성화재",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "000810.KS",
-      "name": "삼성화재",
+      "symbol": "316140.KS",
+      "name": "우리금융지주",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -166,14 +166,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "005490.KS",
-      "name": "POSCO홀딩스",
+      "symbol": "011200.KS",
+      "name": "HMM",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "011200.KS",
-      "name": "HMM",
+      "symbol": "005490.KS",
+      "name": "POSCO홀딩스",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -190,14 +190,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "017670.KS",
-      "name": "SK텔레콤",
+      "symbol": "018260.KS",
+      "name": "삼성에스디에스",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "018260.KS",
-      "name": "삼성에스디에스",
+      "symbol": "017670.KS",
+      "name": "SK텔레콤",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -244,26 +244,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "024110.KS",
-      "name": "기업은행",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "051910.KS",
-      "name": "LG화학",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "086280.KS",
       "name": "현대글로비스",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "003670.KS",
-      "name": "포스코퓨처엠",
+      "symbol": "024110.KS",
+      "name": "기업은행",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -274,8 +262,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "010140.KS",
-      "name": "삼성중공업",
+      "symbol": "003670.KS",
+      "name": "포스코퓨처엠",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "051910.KS",
+      "name": "LG화학",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -286,8 +280,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "042660.KS",
-      "name": "한화오션",
+      "symbol": "010140.KS",
+      "name": "삼성중공업",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -298,8 +292,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "028050.KS",
-      "name": "삼성E&A",
+      "symbol": "042660.KS",
+      "name": "한화오션",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -310,20 +304,26 @@
       "currency": "KRW"
     },
     {
+      "symbol": "028050.KS",
+      "name": "삼성E&A",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "030200.KS",
       "name": "KT",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "003490.KS",
-      "name": "대한항공",
+      "symbol": "010950.KS",
+      "name": "S-Oil",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "010950.KS",
-      "name": "S-Oil",
+      "symbol": "003490.KS",
+      "name": "대한항공",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -340,14 +340,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "323410.KS",
-      "name": "카카오뱅크",
+      "symbol": "047810.KS",
+      "name": "한국항공우주",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "047810.KS",
-      "name": "한국항공우주",
+      "symbol": "323410.KS",
+      "name": "카카오뱅크",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -358,14 +358,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "267250.KS",
-      "name": "HD현대",
+      "symbol": "272210.KS",
+      "name": "한화시스템",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "272210.KS",
-      "name": "한화시스템",
+      "symbol": "267250.KS",
+      "name": "HD현대",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -382,6 +382,12 @@
       "currency": "KRW"
     },
     {
+      "symbol": "047050.KS",
+      "name": "포스코인터내셔널",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "278470.KS",
       "name": "에이피알",
       "market": "KOSPI",
@@ -394,26 +400,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "047050.KS",
-      "name": "포스코인터내셔널",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "005940.KS",
       "name": "NH투자증권",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "443060.KS",
-      "name": "HD현대마린솔루션",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "161390.KS",
-      "name": "한국타이어앤테크놀로지",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -424,14 +412,26 @@
       "currency": "KRW"
     },
     {
+      "symbol": "307950.KS",
+      "name": "현대오토에버",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "443060.KS",
+      "name": "HD현대마린솔루션",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "078930.KS",
       "name": "GS",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "307950.KS",
-      "name": "현대오토에버",
+      "symbol": "079550.KS",
+      "name": "LIG디펜스앤에어로스페이스",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -442,8 +442,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "079550.KS",
-      "name": "LIG디펜스앤에어로스페이스",
+      "symbol": "161390.KS",
+      "name": "한국타이어앤테크놀로지",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -466,8 +466,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "326030.KS",
-      "name": "SK바이오팜",
+      "symbol": "352820.KS",
+      "name": "하이브",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -478,20 +478,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "352820.KS",
-      "name": "하이브",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "032640.KS",
-      "name": "LG유플러스",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "016360.KS",
-      "name": "삼성증권",
+      "symbol": "326030.KS",
+      "name": "SK바이오팜",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -502,20 +490,32 @@
       "currency": "KRW"
     },
     {
+      "symbol": "016360.KS",
+      "name": "삼성증권",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "032640.KS",
+      "name": "LG유플러스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "000500.KS",
       "name": "가온전선",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "007660.KS",
-      "name": "이수페타시스",
+      "symbol": "000100.KS",
+      "name": "유한양행",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "000100.KS",
-      "name": "유한양행",
+      "symbol": "007660.KS",
+      "name": "이수페타시스",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -532,12 +532,6 @@
       "currency": "KRW"
     },
     {
-      "symbol": "175330.KS",
-      "name": "JB금융지주",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "039490.KS",
       "name": "키움증권",
       "market": "KOSPI",
@@ -546,6 +540,12 @@
     {
       "symbol": "241560.KS",
       "name": "두산밥캣",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "175330.KS",
+      "name": "JB금융지주",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -604,20 +604,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "012750.KS",
-      "name": "에스원",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "036570.KS",
       "name": "NC",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "000880.KS",
-      "name": "한화",
+      "symbol": "012750.KS",
+      "name": "에스원",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -628,8 +622,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "008930.KS",
-      "name": "한미사이언스",
+      "symbol": "000880.KS",
+      "name": "한화",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -640,20 +634,26 @@
       "currency": "KRW"
     },
     {
+      "symbol": "008930.KS",
+      "name": "한미사이언스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "036460.KS",
       "name": "한국가스공사",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "011790.KS",
-      "name": "SKC",
+      "symbol": "034220.KS",
+      "name": "LG디스플레이",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "034220.KS",
-      "name": "LG디스플레이",
+      "symbol": "011790.KS",
+      "name": "SKC",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -682,38 +682,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "010060.KS",
-      "name": "OCI홀딩스",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "022100.KS",
       "name": "포스코DX",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "088350.KS",
-      "name": "한화생명",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "000990.KS",
-      "name": "DB하이텍",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "302440.KS",
-      "name": "SK바이오사이언스",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "111770.KS",
-      "name": "영원무역",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -724,20 +694,20 @@
       "currency": "KRW"
     },
     {
-      "symbol": "001450.KS",
-      "name": "현대해상",
+      "symbol": "000990.KS",
+      "name": "DB하이텍",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "018880.KS",
-      "name": "한온시스템",
+      "symbol": "088350.KS",
+      "name": "한화생명",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "035250.KS",
-      "name": "강원랜드",
+      "symbol": "010060.KS",
+      "name": "OCI홀딩스",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -748,14 +718,38 @@
       "currency": "KRW"
     },
     {
+      "symbol": "018880.KS",
+      "name": "한온시스템",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "001450.KS",
+      "name": "현대해상",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "111770.KS",
+      "name": "영원무역",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "066970.KS",
       "name": "엘앤에프",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "009420.KS",
-      "name": "한올바이오파마",
+      "symbol": "302440.KS",
+      "name": "SK바이오사이언스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "035250.KS",
+      "name": "강원랜드",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -772,20 +766,26 @@
       "currency": "KRW"
     },
     {
-      "symbol": "026960.KS",
-      "name": "동서",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "103590.KS",
-      "name": "일진전기",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "028670.KS",
       "name": "팬오션",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "009420.KS",
+      "name": "한올바이오파마",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "161890.KS",
+      "name": "한국콜마",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "026960.KS",
+      "name": "동서",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -796,8 +796,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "161890.KS",
-      "name": "한국콜마",
+      "symbol": "103590.KS",
+      "name": "일진전기",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -832,26 +832,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "011780.KS",
-      "name": "금호석유화학",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "023530.KS",
-      "name": "롯데쇼핑",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "017800.KS",
       "name": "현대엘리베이터",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "383220.KS",
-      "name": "F&F",
+      "symbol": "011780.KS",
+      "name": "금호석유화학",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -862,14 +850,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "003690.KS",
-      "name": "코리안리",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "279570.KS",
-      "name": "케이뱅크",
+      "symbol": "023530.KS",
+      "name": "롯데쇼핑",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -880,8 +862,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "004990.KS",
-      "name": "롯데지주",
+      "symbol": "383220.KS",
+      "name": "F&F",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "003690.KS",
+      "name": "코리안리",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -892,44 +880,14 @@
       "currency": "KRW"
     },
     {
+      "symbol": "004990.KS",
+      "name": "롯데지주",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "007810.KS",
       "name": "코리아써키트",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "018670.KS",
-      "name": "SK가스",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "089860.KS",
-      "name": "롯데렌탈",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "004370.KS",
-      "name": "농심",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "069960.KS",
-      "name": "현대백화점",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "002790.KS",
-      "name": "아모레퍼시픽홀딩스",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "009970.KS",
-      "name": "영원무역홀딩스",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -940,8 +898,56 @@
       "currency": "KRW"
     },
     {
+      "symbol": "279570.KS",
+      "name": "케이뱅크",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "004370.KS",
+      "name": "농심",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "089860.KS",
+      "name": "롯데렌탈",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "005440.KS",
       "name": "현대지에프홀딩스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "018670.KS",
+      "name": "SK가스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "002790.KS",
+      "name": "아모레퍼시픽홀딩스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "069960.KS",
+      "name": "현대백화점",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "009970.KS",
+      "name": "영원무역홀딩스",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "020150.KS",
+      "name": "롯데에너지머티리얼즈",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -958,14 +964,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "375500.KS",
-      "name": "DL이앤씨",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "000240.KS",
-      "name": "한국앤컴퍼니",
+      "symbol": "450080.KS",
+      "name": "에코프로머티",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -976,38 +976,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "450080.KS",
-      "name": "에코프로머티",
+      "symbol": "375500.KS",
+      "name": "DL이앤씨",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
       "symbol": "030000.KS",
       "name": "제일기획",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "489790.KS",
-      "name": "한화비전",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "005850.KS",
-      "name": "에스엘",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "020150.KS",
-      "name": "롯데에너지머티리얼즈",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "007070.KS",
-      "name": "GS리테일",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1024,14 +1000,26 @@
       "currency": "KRW"
     },
     {
-      "symbol": "020560.KS",
-      "name": "아시아나항공",
+      "symbol": "005850.KS",
+      "name": "에스엘",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "112610.KS",
-      "name": "씨에스윈드",
+      "symbol": "000240.KS",
+      "name": "한국앤컴퍼니",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "489790.KS",
+      "name": "한화비전",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "007070.KS",
+      "name": "GS리테일",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1042,26 +1030,32 @@
       "currency": "KRW"
     },
     {
+      "symbol": "112610.KS",
+      "name": "씨에스윈드",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "020560.KS",
+      "name": "아시아나항공",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "081660.KS",
       "name": "미스토홀딩스",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "006280.KS",
-      "name": "녹십자",
+      "symbol": "336260.KS",
+      "name": "두산퓨얼셀",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
       "symbol": "294870.KS",
       "name": "IPARK현대산업개발",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "336260.KS",
-      "name": "두산퓨얼셀",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1090,6 +1084,12 @@
       "currency": "KRW"
     },
     {
+      "symbol": "006280.KS",
+      "name": "녹십자",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "073240.KS",
       "name": "금호타이어",
       "market": "KOSPI",
@@ -1114,6 +1114,12 @@
       "currency": "KRW"
     },
     {
+      "symbol": "103140.KS",
+      "name": "풍산",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
       "symbol": "006040.KS",
       "name": "동원산업",
       "market": "KOSPI",
@@ -1126,26 +1132,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "103140.KS",
-      "name": "풍산",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
       "symbol": "008770.KS",
       "name": "호텔신라",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "001120.KS",
-      "name": "LX인터내셔널",
-      "market": "KOSPI",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "011210.KS",
-      "name": "현대위아",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1156,14 +1144,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "023590.KS",
-      "name": "다우기술",
+      "symbol": "011210.KS",
+      "name": "현대위아",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
-      "symbol": "298020.KS",
-      "name": "효성티앤씨",
+      "symbol": "001120.KS",
+      "name": "LX인터내셔널",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1174,8 +1162,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "071970.KS",
-      "name": "HD현대마린엔진",
+      "symbol": "023590.KS",
+      "name": "다우기술",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1198,8 +1186,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "069620.KS",
-      "name": "대웅제약",
+      "symbol": "229640.KS",
+      "name": "LS에코에너지",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1210,14 +1198,26 @@
       "currency": "KRW"
     },
     {
-      "symbol": "229640.KS",
-      "name": "LS에코에너지",
+      "symbol": "071970.KS",
+      "name": "HD현대마린엔진",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "298020.KS",
+      "name": "효성티앤씨",
       "market": "KOSPI",
       "currency": "KRW"
     },
     {
       "symbol": "000080.KS",
       "name": "하이트진로",
+      "market": "KOSPI",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "069620.KS",
+      "name": "대웅제약",
       "market": "KOSPI",
       "currency": "KRW"
     },
@@ -1240,14 +1240,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "036930.KQ",
-      "name": "주성엔지니어링",
+      "symbol": "277810.KQ",
+      "name": "레인보우로보틱스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "277810.KQ",
-      "name": "레인보우로보틱스",
+      "symbol": "036930.KQ",
+      "name": "주성엔지니어링",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1264,20 +1264,20 @@
       "currency": "KRW"
     },
     {
+      "symbol": "058470.KQ",
+      "name": "리노공업",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
       "symbol": "028300.KQ",
       "name": "HLB",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "000250.KQ",
-      "name": "삼천당제약",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "058470.KQ",
-      "name": "리노공업",
+      "symbol": "108490.KQ",
+      "name": "로보티즈",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1288,8 +1288,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "108490.KQ",
-      "name": "로보티즈",
+      "symbol": "000250.KQ",
+      "name": "삼천당제약",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1306,14 +1306,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "031980.KQ",
-      "name": "피에스케이홀딩스",
+      "symbol": "214450.KQ",
+      "name": "파마리서치",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "214450.KQ",
-      "name": "파마리서치",
+      "symbol": "031980.KQ",
+      "name": "피에스케이홀딩스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1324,26 +1324,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "145020.KQ",
-      "name": "휴젤",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "319660.KQ",
       "name": "피에스케이",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "298380.KQ",
-      "name": "에이비엘바이오",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "087010.KQ",
-      "name": "펩트론",
+      "symbol": "145020.KQ",
+      "name": "휴젤",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1360,56 +1348,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "141080.KQ",
-      "name": "리가켐바이오",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "140410.KQ",
-      "name": "메지온",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "178320.KQ",
-      "name": "서진시스템",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "357780.KQ",
-      "name": "솔브레인",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "310210.KQ",
-      "name": "보로노이",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "064760.KQ",
-      "name": "티씨케이",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "068760.KQ",
-      "name": "셀트리온제약",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "226950.KQ",
-      "name": "올릭스",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "080220.KQ",
-      "name": "제주반도체",
+      "symbol": "298380.KQ",
+      "name": "에이비엘바이오",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1420,8 +1360,32 @@
       "currency": "KRW"
     },
     {
-      "symbol": "263750.KQ",
-      "name": "펄어비스",
+      "symbol": "178320.KQ",
+      "name": "서진시스템",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "140410.KQ",
+      "name": "메지온",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "141080.KQ",
+      "name": "리가켐바이오",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "357780.KQ",
+      "name": "솔브레인",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "087010.KQ",
+      "name": "펩트론",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1432,14 +1396,32 @@
       "currency": "KRW"
     },
     {
-      "symbol": "005290.KQ",
-      "name": "동진쎄미켐",
+      "symbol": "064760.KQ",
+      "name": "티씨케이",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "347850.KQ",
-      "name": "디앤디파마텍",
+      "symbol": "310210.KQ",
+      "name": "보로노이",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "226950.KQ",
+      "name": "올릭스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "068760.KQ",
+      "name": "셀트리온제약",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "080220.KQ",
+      "name": "제주반도체",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1456,14 +1438,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "440110.KQ",
-      "name": "파두",
+      "symbol": "263750.KQ",
+      "name": "펄어비스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "257720.KQ",
-      "name": "실리콘투",
+      "symbol": "005290.KQ",
+      "name": "동진쎄미켐",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1474,14 +1456,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "098460.KQ",
-      "name": "고영",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "067310.KQ",
-      "name": "하나마이크론",
+      "symbol": "058610.KQ",
+      "name": "에스피지",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1492,20 +1468,32 @@
       "currency": "KRW"
     },
     {
-      "symbol": "058610.KQ",
-      "name": "에스피지",
+      "symbol": "347850.KQ",
+      "name": "디앤디파마텍",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "237690.KQ",
-      "name": "에스티팜",
+      "symbol": "440110.KQ",
+      "name": "파두",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "214150.KQ",
-      "name": "클래시스",
+      "symbol": "098460.KQ",
+      "name": "고영",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "257720.KQ",
+      "name": "실리콘투",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "067310.KQ",
+      "name": "하나마이크론",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1522,14 +1510,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "214370.KQ",
-      "name": "케어젠",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "007390.KQ",
-      "name": "네이처셀",
+      "symbol": "237690.KQ",
+      "name": "에스티팜",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1540,8 +1522,32 @@
       "currency": "KRW"
     },
     {
+      "symbol": "214150.KQ",
+      "name": "클래시스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "214370.KQ",
+      "name": "케어젠",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "131970.KQ",
+      "name": "두산테스나",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
       "symbol": "036540.KQ",
       "name": "SFA반도체",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "007390.KQ",
+      "name": "네이처셀",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1558,32 +1564,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "131970.KQ",
-      "name": "두산테스나",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "078600.KQ",
       "name": "대주전자재료",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "039200.KQ",
-      "name": "오스코텍",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "060370.KQ",
-      "name": "LS마린솔루션",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "140860.KQ",
-      "name": "파크시스템스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1594,14 +1576,38 @@
       "currency": "KRW"
     },
     {
-      "symbol": "003380.KQ",
-      "name": "하림지주",
+      "symbol": "140860.KQ",
+      "name": "파크시스템스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "060370.KQ",
+      "name": "LS마린솔루션",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "039200.KQ",
+      "name": "오스코텍",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
       "symbol": "290650.KQ",
       "name": "엘앤씨바이오",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "232140.KQ",
+      "name": "와이씨",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "003380.KQ",
+      "name": "하림지주",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1618,20 +1624,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "232140.KQ",
-      "name": "와이씨",
+      "symbol": "950260.KQ",
+      "name": "인제니아테라퓨틱스(Reg.S)",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "086450.KQ",
-      "name": "동국제약",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "096530.KQ",
-      "name": "씨젠",
+      "symbol": "241710.KQ",
+      "name": "코스메카코리아",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1642,8 +1642,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "241710.KQ",
-      "name": "코스메카코리아",
+      "symbol": "096530.KQ",
+      "name": "씨젠",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "086450.KQ",
+      "name": "동국제약",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1660,26 +1666,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "950260.KQ",
-      "name": "인제니아테라퓨틱스(Reg.S)",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "204270.KQ",
-      "name": "제이앤티씨",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "356860.KQ",
       "name": "티엘비",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "251970.KQ",
-      "name": "펌텍코리아",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1690,14 +1678,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "425420.KQ",
-      "name": "티에프이",
+      "symbol": "204270.KQ",
+      "name": "제이앤티씨",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "420770.KQ",
-      "name": "기가비스",
+      "symbol": "251970.KQ",
+      "name": "펌텍코리아",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1708,14 +1696,20 @@
       "currency": "KRW"
     },
     {
+      "symbol": "420770.KQ",
+      "name": "기가비스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
       "symbol": "183300.KQ",
       "name": "코미코",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "082920.KQ",
-      "name": "비츠로셀",
+      "symbol": "425420.KQ",
+      "name": "티에프이",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1726,26 +1720,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "093320.KQ",
-      "name": "케이아이엔엑스",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "056190.KQ",
-      "name": "SFA",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "122870.KQ",
-      "name": "와이지엔터테인먼트",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "032500.KQ",
-      "name": "케이엠더블유",
+      "symbol": "082920.KQ",
+      "name": "비츠로셀",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1756,8 +1732,44 @@
       "currency": "KRW"
     },
     {
+      "symbol": "122870.KQ",
+      "name": "와이지엔터테인먼트",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
       "symbol": "252990.KQ",
       "name": "샘씨엔에스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "093320.KQ",
+      "name": "케이아이엔엑스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "347700.KQ",
+      "name": "스피어",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "056190.KQ",
+      "name": "SFA",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "032500.KQ",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "121600.KQ",
+      "name": "나노신소재",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1768,8 +1780,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "121600.KQ",
-      "name": "나노신소재",
+      "symbol": "100790.KQ",
+      "name": "미래에셋벤처투자",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1786,32 +1798,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "347700.KQ",
-      "name": "스피어",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "083450.KQ",
       "name": "GST",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "100790.KQ",
-      "name": "미래에셋벤처투자",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "171090.KQ",
-      "name": "선익시스템",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "036830.KQ",
-      "name": "솔브레인홀딩스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1822,20 +1810,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "085660.KQ",
-      "name": "차바이오텍",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "031330.KQ",
-      "name": "에스에이엠티",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "092870.KQ",
       "name": "엑시콘",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "036830.KQ",
+      "name": "솔브레인홀딩스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1846,26 +1828,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "059090.KQ",
-      "name": "미코",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "079940.KQ",
-      "name": "가비아",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "074600.KQ",
-      "name": "원익QnC",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "281740.KQ",
-      "name": "레이크머티리얼즈",
+      "symbol": "031330.KQ",
+      "name": "에스에이엠티",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1876,8 +1840,38 @@
       "currency": "KRW"
     },
     {
-      "symbol": "0158S0.KQ",
-      "name": "엘리스",
+      "symbol": "085660.KQ",
+      "name": "차바이오텍",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "171090.KQ",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "059090.KQ",
+      "name": "미코",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "281740.KQ",
+      "name": "레이크머티리얼즈",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "074600.KQ",
+      "name": "원익QnC",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "079940.KQ",
+      "name": "가비아",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1888,14 +1882,20 @@
       "currency": "KRW"
     },
     {
+      "symbol": "388720.KQ",
+      "name": "유일로보틱스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
       "symbol": "041960.KQ",
       "name": "코미팜",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "127120.KQ",
-      "name": "제이에스링크",
+      "symbol": "0158S0.KQ",
+      "name": "엘리스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1906,14 +1906,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "006730.KQ",
-      "name": "서부T&D",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "388720.KQ",
-      "name": "유일로보틱스",
+      "symbol": "126340.KQ",
+      "name": "비나텍",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1924,8 +1918,32 @@
       "currency": "KRW"
     },
     {
-      "symbol": "064290.KQ",
-      "name": "인텍플러스",
+      "symbol": "006730.KQ",
+      "name": "서부T&D",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "219130.KQ",
+      "name": "타이거일렉",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "468530.KQ",
+      "name": "프로티나",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "290550.KQ",
+      "name": "디케이티",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "295310.KQ",
+      "name": "에이치브이엠",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1942,20 +1960,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "219130.KQ",
-      "name": "타이거일렉",
+      "symbol": "064290.KQ",
+      "name": "인텍플러스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "126340.KQ",
-      "name": "비나텍",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "137400.KQ",
-      "name": "피엔티",
+      "symbol": "127120.KQ",
+      "name": "제이에스링크",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1966,8 +1978,20 @@
       "currency": "KRW"
     },
     {
-      "symbol": "023160.KQ",
-      "name": "태광",
+      "symbol": "253590.KQ",
+      "name": "네오셈",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "137400.KQ",
+      "name": "피엔티",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "089890.KQ",
+      "name": "코세스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1978,8 +2002,14 @@
       "currency": "KRW"
     },
     {
-      "symbol": "468530.KQ",
-      "name": "프로티나",
+      "symbol": "456160.KQ",
+      "name": "지투지바이오",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "090710.KQ",
+      "name": "휴림로봇",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -1990,20 +2020,20 @@
       "currency": "KRW"
     },
     {
-      "symbol": "456160.KQ",
-      "name": "지투지바이오",
+      "symbol": "090360.KQ",
+      "name": "로보스타",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "023160.KQ",
+      "name": "태광",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
       "symbol": "119850.KQ",
       "name": "지엔씨에너지",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "253590.KQ",
-      "name": "네오셈",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -2020,26 +2050,44 @@
       "currency": "KRW"
     },
     {
-      "symbol": "290550.KQ",
-      "name": "디케이티",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "090710.KQ",
-      "name": "휴림로봇",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "476830.KQ",
       "name": "알지노믹스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
     {
-      "symbol": "089890.KQ",
-      "name": "코세스",
+      "symbol": "466100.KQ",
+      "name": "클로봇",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "222080.KQ",
+      "name": "SFA넥셀",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "211050.KQ",
+      "name": "인카금융서비스",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "144960.KQ",
+      "name": "뉴파워프라즈마",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "024850.KQ",
+      "name": "HLB이노베이션",
+      "market": "KOSDAQ",
+      "currency": "KRW"
+    },
+    {
+      "symbol": "327260.KQ",
+      "name": "RF머트리얼즈",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -2056,44 +2104,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "295310.KQ",
-      "name": "에이치브이엠",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
       "symbol": "086900.KQ",
       "name": "메디톡스",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "222080.KQ",
-      "name": "SFA넥셀",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "090360.KQ",
-      "name": "로보스타",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "211050.KQ",
-      "name": "인카금융서비스",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "115180.KQ",
-      "name": "큐리언트",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "458870.KQ",
-      "name": "씨어스",
       "market": "KOSDAQ",
       "currency": "KRW"
     },
@@ -2104,20 +2116,8 @@
       "currency": "KRW"
     },
     {
-      "symbol": "174900.KQ",
-      "name": "앱클론",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "036810.KQ",
-      "name": "에프에스티",
-      "market": "KOSDAQ",
-      "currency": "KRW"
-    },
-    {
-      "symbol": "327260.KQ",
-      "name": "RF머트리얼즈",
+      "symbol": "115180.KQ",
+      "name": "큐리언트",
       "market": "KOSDAQ",
       "currency": "KRW"
     }

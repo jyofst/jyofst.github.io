@@ -1,0 +1,233 @@
+[
+  {
+    "symbol": "033780.KS",
+    "name": "KT&G",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 182000,
+    "aligned": false,
+    "disparity20": 97.8,
+    "fromHighPct": -9.5,
+    "volRatio": 0.97,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "028050.KS",
+    "name": "삼성E&A",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 64100,
+    "aligned": true,
+    "disparity20": 101.1,
+    "fromHighPct": -8.8,
+    "volRatio": 0.7,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "064400.KS",
+    "name": "LG씨엔에스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 76800,
+    "aligned": true,
+    "disparity20": 101.3,
+    "fromHighPct": -7,
+    "volRatio": 0.95,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "021240.KS",
+    "name": "코웨이",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 103900,
+    "aligned": false,
+    "disparity20": 100.1,
+    "fromHighPct": -5.5,
+    "volRatio": 0.82,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "032640.KS",
+    "name": "LG유플러스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 15430,
+    "aligned": true,
+    "disparity20": 102.8,
+    "fromHighPct": -9.2,
+    "volRatio": 0.73,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "294870.KS",
+    "name": "IPARK현대산업개발",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 24600,
+    "aligned": true,
+    "disparity20": 102.4,
+    "fromHighPct": -5.2,
+    "volRatio": 0.73,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006280.KS",
+    "name": "녹십자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 130800,
+    "aligned": true,
+    "disparity20": 97.2,
+    "fromHighPct": -10,
+    "volRatio": 0.86,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "293490.KQ",
+    "name": "카카오게임즈",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 11800,
+    "aligned": false,
+    "disparity20": 100.6,
+    "fromHighPct": -8.7,
+    "volRatio": 0.47,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "053800.KQ",
+    "name": "안랩",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 104800,
+    "aligned": true,
+    "disparity20": 101.5,
+    "fromHighPct": -23.7,
+    "volRatio": 0.78,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "425420.KQ",
+    "name": "티에프이",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 75600,
+    "aligned": true,
+    "disparity20": 99.3,
+    "fromHighPct": -18.4,
+    "volRatio": 0.95,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "079940.KQ",
+    "name": "가비아",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-18",
+    "close": 48550,
+    "aligned": true,
+    "disparity20": 102.1,
+    "fromHighPct": -5.2,
+    "volRatio": 0.36,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
