@@ -1,0 +1,191 @@
+[
+  {
+    "symbol": "033780.KS",
+    "name": "KT&G",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 182500,
+    "aligned": false,
+    "disparity20": 98.4,
+    "fromHighPct": -9.2,
+    "volRatio": 0.89,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "028050.KS",
+    "name": "삼성E&A",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 63400,
+    "aligned": true,
+    "disparity20": 99.4,
+    "fromHighPct": -9.8,
+    "volRatio": 0.79,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "064400.KS",
+    "name": "LG씨엔에스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 75000,
+    "aligned": true,
+    "disparity20": 98.8,
+    "fromHighPct": -9.2,
+    "volRatio": 0.98,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "032640.KS",
+    "name": "LG유플러스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 15180,
+    "aligned": true,
+    "disparity20": 100.9,
+    "fromHighPct": -10.7,
+    "volRatio": 0.58,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "006280.KS",
+    "name": "녹십자",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 132000,
+    "aligned": false,
+    "disparity20": 98.1,
+    "fromHighPct": -9.2,
+    "volRatio": 0.74,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "425420.KQ",
+    "name": "티에프이",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 75200,
+    "aligned": true,
+    "disparity20": 97.8,
+    "fromHighPct": -18.9,
+    "volRatio": 0.89,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "121600.KQ",
+    "name": "나노신소재",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 66300,
+    "aligned": true,
+    "disparity20": 101.7,
+    "fromHighPct": -15,
+    "volRatio": 0.87,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "126340.KQ",
+    "name": "비나텍",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 91600,
+    "aligned": false,
+    "disparity20": 98.8,
+    "fromHighPct": -24.2,
+    "volRatio": 0.59,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "219130.KQ",
+    "name": "타이거일렉",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-19",
+    "close": 95500,
+    "aligned": true,
+    "disparity20": 99.9,
+    "fromHighPct": -19,
+    "volRatio": 0.89,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
