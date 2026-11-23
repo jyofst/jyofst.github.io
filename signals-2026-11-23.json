@@ -1,0 +1,86 @@
+[
+  {
+    "symbol": "033780.KS",
+    "name": "KT&G",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-20",
+    "close": 181000,
+    "aligned": false,
+    "disparity20": 97.8,
+    "fromHighPct": -10,
+    "volRatio": 0.9,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "032640.KS",
+    "name": "LG유플러스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-20",
+    "close": 14970,
+    "aligned": true,
+    "disparity20": 99.3,
+    "fromHighPct": -11.9,
+    "volRatio": 0.59,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "026960.KS",
+    "name": "동서",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-20",
+    "close": 27350,
+    "aligned": false,
+    "disparity20": 98.6,
+    "fromHighPct": -6.3,
+    "volRatio": 0.94,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "294870.KS",
+    "name": "IPARK현대산업개발",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-20",
+    "close": 24200,
+    "aligned": true,
+    "disparity20": 99.5,
+    "fromHighPct": -6.7,
+    "volRatio": 0.92,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
