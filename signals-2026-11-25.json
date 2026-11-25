@@ -1,0 +1,107 @@
+[
+  {
+    "symbol": "033780.KS",
+    "name": "KT&G",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-24",
+    "close": 183700,
+    "aligned": false,
+    "disparity20": 99.6,
+    "fromHighPct": -8.6,
+    "volRatio": 0.87,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "032640.KS",
+    "name": "LG유플러스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-24",
+    "close": 14960,
+    "aligned": false,
+    "disparity20": 98.5,
+    "fromHighPct": -11.9,
+    "volRatio": 0.63,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "302440.KS",
+    "name": "SK바이오사이언스",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-24",
+    "close": 36900,
+    "aligned": true,
+    "disparity20": 99.8,
+    "fromHighPct": -14.1,
+    "volRatio": 0.7,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "121600.KQ",
+    "name": "나노신소재",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-24",
+    "close": 64900,
+    "aligned": false,
+    "disparity20": 98.6,
+    "fromHighPct": -16.8,
+    "volRatio": 0.75,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "092870.KQ",
+    "name": "엑시콘",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-24",
+    "close": 53900,
+    "aligned": false,
+    "disparity20": 98.3,
+    "fromHighPct": -20.5,
+    "volRatio": 0.77,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
