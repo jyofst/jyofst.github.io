@@ -1,0 +1,107 @@
+[
+  {
+    "symbol": "011200.KS",
+    "name": "HMM",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-26",
+    "close": 22150,
+    "aligned": false,
+    "disparity20": 100.5,
+    "fromHighPct": -6.9,
+    "volRatio": 0.6,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "003490.KS",
+    "name": "대한항공",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-26",
+    "close": 29700,
+    "aligned": true,
+    "disparity20": 97.1,
+    "fromHighPct": -9.9,
+    "volRatio": 0.7,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "020560.KS",
+    "name": "아시아나항공",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "date": "2026-11-26",
+    "close": 8030,
+    "aligned": true,
+    "disparity20": 97.9,
+    "fromHighPct": -10.7,
+    "volRatio": 0.39,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "121600.KQ",
+    "name": "나노신소재",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-26",
+    "close": 65700,
+    "aligned": false,
+    "disparity20": 99.2,
+    "fromHighPct": -15.8,
+    "volRatio": 0.79,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  },
+  {
+    "symbol": "086900.KQ",
+    "name": "메디톡스",
+    "market": "KOSDAQ",
+    "currency": "KRW",
+    "date": "2026-11-26",
+    "close": 69000,
+    "aligned": true,
+    "disparity20": 101.8,
+    "fromHighPct": -7.6,
+    "volRatio": 0.65,
+    "checks": {
+      "uptrend": true,
+      "nearMa20": true,
+      "pulledBack": true,
+      "volumeDryUp": true,
+      "liquidity": true
+    },
+    "failed": [],
+    "pass": true
+  }
+]
